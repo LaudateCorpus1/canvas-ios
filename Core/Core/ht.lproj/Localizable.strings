@@ -200,6 +200,9 @@
 "Anyone" = "Nenpòt";
 
 /* No comment provided by engineer. */
+"Appearance" = "Aparans";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "Disponibilite Randevou";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Gid Canvas";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "Canvas disponib kounye a an mòd sonm";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "Koneksyon Canvas";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "Chwazi Foto Pwofil";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "Chwazi aparans app ou a!\nOu ka chanje li apre nan meni paramèt la.";
 
 /* No comment provided by engineer. */
 "Clear Course" = "Netwaye Kou";
@@ -608,6 +617,15 @@
 "Daily" = "Chak jou";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "Mòd Fonse";
+
+/* No comment provided by engineer. */
+"Dark theme" = "Tèm fonse";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "Tèm Sonm";
+
+/* No comment provided by engineer. */
 "Dashboard" = "Tablo";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "Rejte %@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "Rejte envitasyon a %@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "Afiche Klas tankou";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "Limyè Ble";
 
+/* No comment provided by engineer. */
+"Light theme" = "Tèm klere";
+
+/* No comment provided by engineer. */
+"Light Theme" = "Tèm Klè";
+
 /* like action */
 "Like" = "Jèm";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "Modil";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "Deplase Anotasyon";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "Plizyè Delè";
@@ -1811,10 +1835,16 @@
 "Select Course" = "Seleksyone Kou";
 
 /* No comment provided by engineer. */
+"Select grading period" = "Seleksyone peryòd klasman";
+
+/* No comment provided by engineer. */
 "Select Impact" = "Seleksyone Enpak";
 
 /* No comment provided by engineer. */
 "Select One" = "Seleksyone Yonn";
+
+/* No comment provided by engineer. */
+"Selected" = "Seleksyone";
 
 /* No comment provided by engineer. */
 "Selected!" = "Chwazi!";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "Kontni pwogram";
+
+/* No comment provided by engineer. */
+"System settings" = "Paramèt sistèm";
+
+/* No comment provided by engineer. */
+"System Settings" = "Paramèt Sistèm";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "TA";

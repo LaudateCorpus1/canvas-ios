@@ -200,6 +200,9 @@
 "Anyone" = "Qualquer pessoa";
 
 /* No comment provided by engineer. */
+"Appearance" = "Aparência";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "Disponibilidade de compromisso";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Guias Canvas";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "O ecrã está agora disponível em tema escuro";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "Login Canvas";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "Escolher fotografia de Perfil";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "Escolha a sua aparência de aplicação!\nPode alterá-lo mais tarde no menu de definições.";
 
 /* No comment provided by engineer. */
 "Clear Course" = "Limpar disciplina";
@@ -608,6 +617,15 @@
 "Daily" = "Diariamente";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "Modo Escuro";
+
+/* No comment provided by engineer. */
+"Dark theme" = "Tema escuro";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "Tema Negro";
+
+/* No comment provided by engineer. */
 "Dashboard" = "Painel de controlo";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "Ignorar %@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "Descarte o convite para %@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "Mostrar nota como";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "Azul claro";
 
+/* No comment provided by engineer. */
+"Light theme" = "Tema claro";
+
+/* No comment provided by engineer. */
+"Light Theme" = "Tema Leve";
+
 /* like action */
 "Like" = "Gosto";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "Módulos";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "Anotar o movimento";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "Datas limite múltiplas";
@@ -1811,10 +1835,16 @@
 "Select Course" = "Seleccionar disciplina";
 
 /* No comment provided by engineer. */
+"Select grading period" = "Selecione o período de classificação";
+
+/* No comment provided by engineer. */
 "Select Impact" = "Selecione Impacto";
 
 /* No comment provided by engineer. */
 "Select One" = "Selecionar um";
+
+/* No comment provided by engineer. */
+"Selected" = "Selecionado";
 
 /* No comment provided by engineer. */
 "Selected!" = "Selecionado!";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "Conteúdo do programa de estudo";
+
+/* No comment provided by engineer. */
+"System settings" = "Configurações do sistema";
+
+/* No comment provided by engineer. */
+"System Settings" = "Definições do sistema";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "Assistente";
@@ -2300,7 +2336,7 @@
 "Welcome!" = "Bem-vindo!";
 
 /* No comment provided by engineer. */
-"Well Done!" = "Bem feito!";
+"Well Done!" = "Parabéns!";
 
 /* No comment provided by engineer. */
 "What’s your school’s name?" = "Qual é o nome da sua escola?";
@@ -2360,5 +2396,5 @@
 "Your Email" = "Seu e-mail";
 
 /* No comment provided by engineer. */
-"Your to do list is empty. Time to recharge." = "Sua lista de tarefas está vazia. Hora de recarregar.";
+"Your to do list is empty. Time to recharge." = "A sua lista de tarefas está vazia. Hora de recarregar.";
 

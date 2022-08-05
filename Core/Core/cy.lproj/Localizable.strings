@@ -200,6 +200,9 @@
 "Anyone" = "Unrhyw un";
 
 /* No comment provided by engineer. */
+"Appearance" = "Ymddangdosiad";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "Apwyntiadau ar gael";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Canllawiau Canvas";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "Mae Canvas bellach ar gael mewn thema dywyll";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "Manylion Mewngofnodi Canvas";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "Dewiswch Lun Proffil";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "Dewiswch ymddangosiad eich ap!\nGallwch chi ei newid yn nes ymlaen yn y ddewislen gosodiadau.";
 
 /* No comment provided by engineer. */
 "Clear Course" = "Clirio Cwrs";
@@ -608,6 +617,15 @@
 "Daily" = "Pob dydd";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "Modd Tywyll";
+
+/* No comment provided by engineer. */
+"Dark theme" = "Thema dywyll";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "Thema Dywyll";
+
+/* No comment provided by engineer. */
 "Dashboard" = "Dangosfwrdd";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "Gwrthod %@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "Diystyru’r gwahoddiad i %@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "Dangos Gradd fel";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "Glas golau";
 
+/* No comment provided by engineer. */
+"Light theme" = "Thema golau";
+
+/* No comment provided by engineer. */
+"Light Theme" = "Thema Olau";
+
 /* like action */
 "Like" = "Yn hoffi";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "Modiwlau";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "Symud Anodiad";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "Mwy nag un dyddiad erbyn";
@@ -1811,10 +1835,16 @@
 "Select Course" = "Dewis Cwrs";
 
 /* No comment provided by engineer. */
+"Select grading period" = "Dewis cyfnod graddio";
+
+/* No comment provided by engineer. */
 "Select Impact" = "Dewiswch Effaith";
 
 /* No comment provided by engineer. */
 "Select One" = "Dewiswch Un";
+
+/* No comment provided by engineer. */
+"Selected" = "Wedi dewis";
 
 /* No comment provided by engineer. */
 "Selected!" = "Wedi dewis!";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "Cynnwys maes llafur";
+
+/* No comment provided by engineer. */
+"System settings" = "Gosodiadau system";
+
+/* No comment provided by engineer. */
+"System Settings" = "Gosodiadau System";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "Cynorthwyydd Dysgu";

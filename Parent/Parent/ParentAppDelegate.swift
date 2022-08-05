@@ -49,6 +49,7 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
         NotificationManager.shared.notificationCenter.delegate = self
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         UITableView.setupDefaultSectionHeaderTopPadding()
+        FontAppearance.update()
 
         if let session = LoginSession.mostRecent {
             window?.rootViewController = LoadingViewController.create()
@@ -64,6 +65,7 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         CoreWebView.keepCookieAlive(for: environment)
         AppStoreReview.handleLaunch()
+        updateInterfaceStyle(for: window)
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -83,16 +85,13 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
 
     func setup(session: LoginSession) {
         environment.userDidLogin(session: session)
+        updateInterfaceStyle(for: window)
         CoreWebView.keepCookieAlive(for: environment)
         currentStudentID = environment.userDefaults?.parentCurrentStudentID
         if currentStudentID == nil {
             // UX requires that students are given color schemes in a specific order.
             // The method call below ensures that we always start with the first color scheme.    
             ColorScheme.clear()
-        }
-        if Locale.current.regionCode != "CA" {
-            let crashlyticsUserId = "\(session.userID)@\(session.baseURL.host ?? session.baseURL.absoluteString)"
-            Firebase.Crashlytics.crashlytics().setUserID(crashlyticsUserId)
         }
         Analytics.shared.logSession(session)
         getPreferences { userProfile in performUIUpdate {
@@ -106,7 +105,7 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
 
     func showRootView() {
         guard let window = self.window else { return }
-        let controller = DashboardNavigationController(rootViewController: DashboardViewController.create())
+        let controller = HelmNavigationController(rootViewController: DashboardViewController.create())
         controller.view.layoutIfNeeded()
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: {
             window.rootViewController = controller
@@ -177,8 +176,12 @@ extension ParentAppDelegate: LoginDelegate {
         }
     }
 
+    func openExternalURLinSafari(_ url: URL) {
+        UIApplication.shared.open(url)
+    }
+
     func launchLimitedWebView(url: URL, from sourceViewController: UIViewController) {
-        let controller = CoreWebViewController()
+        let controller = CoreWebViewController(invertColorsInDarkMode: true)
         controller.isInteractionLimited = true
         controller.webView.load(URLRequest(url: url))
         environment.router.show(controller, from: sourceViewController, options: .modal(.fullScreen, embedInNav: true, addDoneButton: true))

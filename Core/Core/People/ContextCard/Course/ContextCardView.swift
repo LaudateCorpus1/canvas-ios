@@ -28,6 +28,7 @@ public struct ContextCardView: View {
 
     public var body: some View {
         contextCard
+            .background(Color.backgroundLightest)
             .navigationBarItems(trailing: emailButton)
             .navigationTitle(model.user.first?.name ?? "", subtitle: model.course.first?.name ?? "")
             .onAppear {
@@ -49,6 +50,7 @@ public struct ContextCardView: View {
     @ViewBuilder var contextCard: some View {
         if model.pending {
             CircleProgress()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
             if let course = model.course.first, let apiUser = model.apiUser, let enrollment = model.enrollment {
                 ScrollView {

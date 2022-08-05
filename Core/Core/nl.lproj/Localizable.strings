@@ -200,6 +200,9 @@
 "Anyone" = "Iedereen";
 
 /* No comment provided by engineer. */
+"Appearance" = "Uiterlijk";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "Beschikbaarheid voor afspraak";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Canvas-handleidingen";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "Canvas is nu beschikbaar in donker thema";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "Aanmelding bij Canvas";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "Profielfoto kiezen";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "Kies je app-verschijning!\nJe kunt dit later wijzigen in het instellingenmenu.";
 
 /* No comment provided by engineer. */
 "Clear Course" = "Cursus wissen";
@@ -608,6 +617,15 @@
 "Daily" = "Dagelijks";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "Donkere modus";
+
+/* No comment provided by engineer. */
+"Dark theme" = "Donker thema";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "Donker thema";
+
+/* No comment provided by engineer. */
 "Dashboard" = "Dashboard";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "Afwijzen %@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "Uitnodiging afwijzen voor %@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "Geef cijfer aan als";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "Lichtblauw";
 
+/* No comment provided by engineer. */
+"Light theme" = "Licht thema";
+
+/* No comment provided by engineer. */
+"Light Theme" = "Licht thema";
+
 /* like action */
 "Like" = "Like";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "Modules";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "Aantekening verplaatsen";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "Meerdere inleverdatums";
@@ -1811,10 +1835,16 @@
 "Select Course" = "Cursus selecteren";
 
 /* No comment provided by engineer. */
+"Select grading period" = "Selecteer beoordelingsperiode";
+
+/* No comment provided by engineer. */
 "Select Impact" = "Impact selecteren";
 
 /* No comment provided by engineer. */
 "Select One" = "Eén selecteren";
+
+/* No comment provided by engineer. */
+"Selected" = "Geselecteerd";
 
 /* No comment provided by engineer. */
 "Selected!" = "Geselecteerd!";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "Syllabusinhoud";
+
+/* No comment provided by engineer. */
+"System settings" = "Systeeminstellingen";
+
+/* No comment provided by engineer. */
+"System Settings" = "Systeeminstellingen";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "Onderwijsassistent";

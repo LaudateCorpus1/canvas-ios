@@ -55,7 +55,7 @@ class TeacherAppDelegate: UIResponder, UIApplicationDelegate, UNUserNotification
         NotificationManager.shared.notificationCenter.delegate = self
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         UITableView.setupDefaultSectionHeaderTopPadding()
-
+        FontAppearance.update()
         TabBarBadgeCounts.application = UIApplication.shared
 
         if let session = LoginSession.mostRecent {
@@ -75,11 +75,8 @@ class TeacherAppDelegate: UIResponder, UIApplicationDelegate, UNUserNotification
 
     func setup(session: LoginSession, wasReload: Bool = false) {
         environment.userDidLogin(session: session)
+        updateInterfaceStyle(for: window)
         CoreWebView.keepCookieAlive(for: environment)
-        if Locale.current.regionCode != "CA" {
-            let crashlyticsUserId = "\(session.userID)@\(session.baseURL.host ?? session.baseURL.absoluteString)"
-            Firebase.Crashlytics.crashlytics().setUserID(crashlyticsUserId)
-        }
         NotificationManager.shared.subscribeToPushChannel()
 
         let getProfile = GetUserProfileRequest(userID: "self")
@@ -173,6 +170,7 @@ class TeacherAppDelegate: UIResponder, UIApplicationDelegate, UNUserNotification
         if (!uiTesting) {
             AppStoreReview.handleLaunch()
         }
+        updateInterfaceStyle(for: window)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -250,6 +248,10 @@ extension TeacherAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
         environment.router.show(safari, from: from, options: .modal())
     }
 
+    func openExternalURLinSafari(_ url: URL) {
+        UIApplication.shared.open(url)
+    }
+
     func userDidLogin(session: LoginSession) {
         LoginSession.add(session)
         setup(session: session)
@@ -272,10 +274,23 @@ extension TeacherAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
     }
 
     func actAsFakeStudent(withID fakeStudentID: String) {
+        actAsFakeStudent(with: fakeStudentID)
+    }
+
+    func actAsFakeStudent(with fakeStudentID: String, rootAccount: String? = nil) {
         guard let session = environment.currentSession else { return }
+
+        var baseUrl = session.baseURL
+        if let rootAccountHost = rootAccount {
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = rootAccountHost
+            baseUrl = components.url ?? baseUrl
+        }
+
         let entry = LoginSession(
             accessToken: session.accessToken,
-            baseURL: session.baseURL,
+            baseURL: baseUrl,
             expiresAt: session.expiresAt,
             lastUsedAt: Date(),
             locale: session.locale,
@@ -300,9 +315,9 @@ extension TeacherAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
         }
     }
 
-    func actAsStudentViewStudent(studentViewStudentID: String) {
+    func actAsStudentViewStudent(studentViewStudent: APIUser) {
         if let url = URL(string: "canvas-student://"), UIApplication.shared.canOpenURL(url) {
-            actAsFakeStudent(withID: studentViewStudentID)
+            actAsFakeStudent(with: studentViewStudent.id.rawValue, rootAccount: studentViewStudent.root_account)
         } else if let url = URL(string: "https://itunes.apple.com/us/app/canvas-student/id480883488?ls=1&mt=8") {
             openExternalURL(url)
         }

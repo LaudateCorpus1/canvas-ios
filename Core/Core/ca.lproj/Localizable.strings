@@ -200,6 +200,9 @@
 "Anyone" = "Qualsevol persona";
 
 /* No comment provided by engineer. */
+"Appearance" = "Aspecte";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "Disponibilitat de cites";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Guies del Canvas";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "Ara, el Canvas està disponible en tema fosc";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "Inici de sessió a Canvas";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "Tria una imatge de perfil";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "Trieu l’aspecte de l’aplicació\nPodeu canviar-lo més endavant al menú Configuració.";
 
 /* No comment provided by engineer. */
 "Clear Course" = "Suprimeix l'assignatura";
@@ -608,6 +617,15 @@
 "Daily" = "Diari";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "Mode fosc";
+
+/* No comment provided by engineer. */
+"Dark theme" = "Tema fosc";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "Tema fosc";
+
+/* No comment provided by engineer. */
 "Dashboard" = "Panell de control";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "Descarta %@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "Descarta la invitació per a %@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "Mostra la nota com";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "Blau clar";
 
+/* No comment provided by engineer. */
+"Light theme" = "Tema clar";
+
+/* No comment provided by engineer. */
+"Light Theme" = "Tema clar";
+
 /* like action */
 "Like" = "M'agrada";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "Continguts";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "Desplaça l’anotació";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "Dates de lliurament múltiples";
@@ -1811,10 +1835,16 @@
 "Select Course" = "Selecciona l'assignatura";
 
 /* No comment provided by engineer. */
+"Select grading period" = "Seleccioneu el període de qualificació";
+
+/* No comment provided by engineer. */
 "Select Impact" = "Selecciona l’impacte";
 
 /* No comment provided by engineer. */
 "Select One" = "Selecciona'n un";
+
+/* No comment provided by engineer. */
+"Selected" = "Seleccionat";
 
 /* No comment provided by engineer. */
 "Selected!" = "Seleccionat!";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "Contingut del temari";
+
+/* No comment provided by engineer. */
+"System settings" = "Configuració del sistema";
+
+/* No comment provided by engineer. */
+"System Settings" = "Configuració del sistema";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "Auxiliar de professor";

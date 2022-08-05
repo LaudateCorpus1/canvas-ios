@@ -56,6 +56,7 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
         NotificationManager.shared.notificationCenter.delegate = self
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         UITableView.setupDefaultSectionHeaderTopPadding()
+        FontAppearance.update()
 
         if launchOptions?[.sourceApplication] as? String == Bundle.teacherBundleID,
            let url = launchOptions?[.url] as? URL,
@@ -82,11 +83,9 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
     func setup(session: LoginSession) {
         environment.userDidLogin(session: session)
         environment.userDefaults?.isK5StudentView = shouldSetK5StudentView
+        updateInterfaceStyle(for: window)
+
         CoreWebView.keepCookieAlive(for: environment)
-        if Locale.current.regionCode != "CA" {
-            let crashlyticsUserId = "\(session.userID)@\(session.baseURL.host ?? session.baseURL.absoluteString)"
-            Firebase.Crashlytics.crashlytics().setUserID(crashlyticsUserId)
-        }
 
         Analytics.setUserID(session.userID)
         Analytics.setUserProperty(session.baseURL.absoluteString, forName: "base_url")
@@ -135,6 +134,7 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
     func applicationDidBecomeActive(_ application: UIApplication) {
         AppStoreReview.handleLaunch()
         CoreWebView.keepCookieAlive(for: environment)
+        updateInterfaceStyle(for: window)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -347,7 +347,11 @@ extension StudentAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
     }
 
     func openExternalURL(_ url: URL) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        openExternalURLinSafari(url)
+    }
+
+    func openExternalURLinSafari(_ url: URL) {
+        UIApplication.shared.open(url)
     }
 
     func userDidLogin(session: LoginSession) {
@@ -363,7 +367,6 @@ extension StudentAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
         UIApplication.shared.applicationIconBadgeNumber = 0
         environment.userDidLogout(session: session)
         CoreWebView.stopCookieKeepAlive()
-        NativeLoginManager.shared().logout()
     }
 
     func userDidLogout(session: LoginSession) {

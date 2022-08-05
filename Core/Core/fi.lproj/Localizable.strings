@@ -200,6 +200,9 @@
 "Anyone" = "Kuka tahansa";
 
 /* No comment provided by engineer. */
+"Appearance" = "Ulkoasu";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "Tapaamisen saatavilla olo";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Canvas-oppaat";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "Canvas on nyt saatavilla tummana teema";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "Canvas-sisäänkirjautuminen";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "Valitse profiilikuva";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "Valitse sovelluksesi ulkoasu!\nVoit vaihtaa sen myöhemmin asetusvalikossa.";
 
 /* No comment provided by engineer. */
 "Clear Course" = "Tyhjennä kurssi";
@@ -608,6 +617,15 @@
 "Daily" = "Päivittäin";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "Tumma tila";
+
+/* No comment provided by engineer. */
+"Dark theme" = "Tumma teema";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "Tumma teema";
+
+/* No comment provided by engineer. */
 "Dashboard" = "Koontinäyttö";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "Ohita %@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "Ohita kutsu kohteeseen  %@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "Näytä arvosana seuraavasti";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "Vaaleansininen";
 
+/* No comment provided by engineer. */
+"Light theme" = "Vaalea teema";
+
+/* No comment provided by engineer. */
+"Light Theme" = "Vaalea teema";
+
 /* like action */
 "Like" = "Tykkää";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "Moduulit";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "Siirrä merkintä";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "Useita määräpäiviä";
@@ -1811,10 +1835,16 @@
 "Select Course" = "Valitse kurssi";
 
 /* No comment provided by engineer. */
+"Select grading period" = "Valitse arvosanojen antojakso";
+
+/* No comment provided by engineer. */
 "Select Impact" = "Valitse vaikutus";
 
 /* No comment provided by engineer. */
 "Select One" = "Valitse yksi";
+
+/* No comment provided by engineer. */
+"Selected" = "Valittu";
 
 /* No comment provided by engineer. */
 "Selected!" = "Valittu!";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "Opinto-ohjelman sisältö";
+
+/* No comment provided by engineer. */
+"System settings" = "Järjestelmäasetukset";
+
+/* No comment provided by engineer. */
+"System Settings" = "Järjestelmäasetukset";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "Apuopettaja";

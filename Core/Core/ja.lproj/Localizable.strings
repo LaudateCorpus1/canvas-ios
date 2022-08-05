@@ -200,6 +200,9 @@
 "Anyone" = "全員";
 
 /* No comment provided by engineer. */
+"Appearance" = "外観";
+
+/* No comment provided by engineer. */
 "Appointment Availability" = "予約利用可能性";
 
 /* No comment provided by engineer. */
@@ -374,6 +377,9 @@
 "Canvas Guides" = "Canvas ガイド";
 
 /* No comment provided by engineer. */
+"Canvas is now available in dark theme" = "Canvasがダークテーマで利用可能に";
+
+/* No comment provided by engineer. */
 "Canvas Login" = "キャンバスログイン";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Choose Profile Picture" = "プロフィール写真を選択する";
+
+/* No comment provided by engineer. */
+"Choose your app appearance!\nYou can change it later in the settings menu." = "アプリの外観を選択しましょう！\n設定メニューで後から変更可能です。";
 
 /* No comment provided by engineer. */
 "Clear Course" = "コースをクリアする";
@@ -608,6 +617,15 @@
 "Daily" = "毎日";
 
 /* No comment provided by engineer. */
+"Dark Mode" = "ダークモード";
+
+/* No comment provided by engineer. */
+"Dark theme" = "ダークテーマ";
+
+/* No comment provided by engineer. */
+"Dark Theme" = "ダークテーマ";
+
+/* No comment provided by engineer. */
 "Dashboard" = "ダッシュボード";
 
 /* No comment provided by engineer. */
@@ -702,9 +720,6 @@
 
 /* No comment provided by engineer. */
 "Dismiss %@" = "取り下げる%@";
-
-/* No comment provided by engineer. */
-"Dismiss invitation to %@" = "（）への招待を取り下げる%@";
 
 /* No comment provided by engineer. */
 "Display Grade as" = "評定の表示方法";
@@ -1135,6 +1150,12 @@
 /* No comment provided by engineer. */
 "Light Blue" = "ライトブルー";
 
+/* No comment provided by engineer. */
+"Light theme" = "ライトテーマ";
+
+/* No comment provided by engineer. */
+"Light Theme" = "ライトテーマ";
+
 /* like action */
 "Like" = "いいね！";
 
@@ -1278,6 +1299,9 @@
 
 /* No comment provided by engineer. */
 "Modules" = "モジュール";
+
+/* No comment provided by engineer. */
+"Move Annotation" = "昼食を移動";
 
 /* No comment provided by engineer. */
 "Multiple Due Dates" = "複数の締切日";
@@ -1811,10 +1835,16 @@
 "Select Course" = "コースの選択";
 
 /* No comment provided by engineer. */
+"Select grading period" = "評定期間を選択";
+
+/* No comment provided by engineer. */
 "Select Impact" = "深刻度をお選びください";
 
 /* No comment provided by engineer. */
 "Select One" = "1 つを選択";
+
+/* No comment provided by engineer. */
+"Selected" = "選択されました";
 
 /* No comment provided by engineer. */
 "Selected!" = "選択されました！";
@@ -1977,6 +2007,12 @@
 
 /* No comment provided by engineer. */
 "Syllabus content" = "シラバスの内容";
+
+/* No comment provided by engineer. */
+"System settings" = "システム設定";
+
+/* No comment provided by engineer. */
+"System Settings" = "システム設定";
 
 /* Teacher's Assistant (abbreviated) */
 "TA" = "TA";
