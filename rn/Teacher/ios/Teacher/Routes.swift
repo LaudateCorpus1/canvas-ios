@@ -253,7 +253,15 @@ let router = Router(routes: HelmManager.shared.routeHandlers([
         return QuizListViewController.create(courseID: courseID)
     },
 
-    "/courses/:courseID/quizzes/:quizID": nil,
+    "/courses/:courseID/quizzes/:quizID": { url, params, userInfo in
+        if ExperimentalFeature.nativeTeacherQuiz.isEnabled {
+            guard let courseID = params["courseID"], let quizID = params["quizID"] else { return nil }
+            let viewModel = QuizDetailsViewModel(courseID: courseID, quizID: quizID)
+            return CoreHostingController(QuizDetailsView(viewModel: viewModel))
+        } else {
+            return HelmViewController(moduleName: "/courses/:courseID/quizzes/:quizID", url: url, params: params, userInfo: userInfo)
+        }
+    },
     "/courses/:courseID/quizzes/:quizID/preview": nil,
     "/courses/:courseID/quizzes/:quizID/edit": nil,
     "/courses/:courseID/quizzes/:quizID/submissions": nil,
@@ -323,9 +331,18 @@ let router = Router(routes: HelmManager.shared.routeHandlers([
 private func discussionDetails(url: URLComponents, params: [String: String], userInfo: [String: Any]?) -> UIViewController? {
     guard let context = Context(path: url.path), let topicID = params["discussionID"] else { return nil }
 
-    if ExperimentalFeature.hybridDiscussionDetails.isEnabled, DiscussionWebPageViewModel.isRedesignEnabled(in: context) {
-        let viewModel = DiscussionWebPageViewModel(context: context, topicID: topicID)
-        return CoreHostingController(EmbeddedWebPageView(viewModel: viewModel))
+    if ExperimentalFeature.hybridDiscussionDetails.isEnabled,
+       DiscussionWebPageViewModel.isRedesignEnabled(in: context) {
+        let viewModel = DiscussionWebPageViewModel(
+            context: context,
+            topicID: topicID
+        )
+        return CoreHostingController(
+            EmbeddedWebPageView(
+                viewModel: viewModel,
+                isPullToRefreshEnabled: true
+            )
+        )
     } else {
         return DiscussionDetailsViewController.create(context: context, topicID: topicID)
     }

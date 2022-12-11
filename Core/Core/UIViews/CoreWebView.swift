@@ -50,21 +50,39 @@ private extension WKWebViewConfiguration {
 
 @IBDesignable
 open class CoreWebView: WKWebView {
+    public enum PullToRefresh {
+        case disabled
+        case enabled(color: UIColor?)
+    }
+
     public static var defaultConfiguration: WKWebViewConfiguration {
         let configuration = WKWebViewConfiguration()
         configuration.applyDefaultSettings()
         return configuration
     }
+
     private static var BalsamiqRegularCSSFontFace: String = {
         let url = Bundle.core.url(forResource: "font_balsamiq_regular", withExtension: "css")!
         // swiftlint:disable:next force_try
         return try! String(contentsOf: url)
     }()
+
     private static var LatoRegularCSSFontFace: String = {
         let url = Bundle.core.url(forResource: "font_lato_regular", withExtension: "css")!
         // swiftlint:disable:next force_try
         return try! String(contentsOf: url)
     }()
+    private lazy var refreshControl: CircleRefreshControl = {
+        let refreshControl = CircleRefreshControl()
+        refreshControl.addTarget(
+            self,
+            action: #selector(refreshWebView(_:)),
+            for: .valueChanged
+        )
+        return refreshControl
+    }()
+    private let pullToRefresh: PullToRefresh
+    private var pullToRefreshNavigation: WKNavigation?
 
     @IBInspectable public var autoresizesHeight: Bool = false
     public weak var linkDelegate: CoreWebViewLinkDelegate?
@@ -74,12 +92,19 @@ open class CoreWebView: WKWebView {
 
     public static let processPool = WKProcessPool()
 
+    public init(pullToRefresh: PullToRefresh) {
+        self.pullToRefresh = pullToRefresh
+        super.init(frame: .zero)
+    }
+
     public required init?(coder: NSCoder) {
+        pullToRefresh = .disabled
         super.init(coder: coder)
         setup()
     }
 
-    public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+    override public init(frame: CGRect, configuration: WKWebViewConfiguration) {
+        pullToRefresh = .disabled
         configuration.applyDefaultSettings()
         super.init(frame: frame, configuration: configuration)
         setup()
@@ -89,7 +114,16 @@ open class CoreWebView: WKWebView {
      - parameters:
         - invertColorsInDarkMode: If this parameter is true, then the webview will inject a script that inverts colors on the loaded website. Useful if we load 3rd party content without dark mode support.
      */
-    public init(customUserAgentName: String? = nil, disableZoom: Bool = false, configuration: WKWebViewConfiguration? = nil, invertColorsInDarkMode: Bool = false) {
+    public init(
+        customUserAgentName: String? = nil,
+        disableZoom: Bool = false,
+        pullToRefresh: PullToRefresh,
+        pullToRefreshColor: UIColor? = nil,
+        configuration: WKWebViewConfiguration? = nil,
+        invertColorsInDarkMode: Bool = false
+    ) {
+        self.pullToRefresh = pullToRefresh
+
         let config = configuration ?? Self.defaultConfiguration
         config.applyDefaultSettings()
 
@@ -107,10 +141,15 @@ open class CoreWebView: WKWebView {
             addScript(colorInvertInDarkModeScript)
         }
 
+        if case let .enabled(color) = pullToRefresh {
+            addRefreshControl(color: color)
+        }
+
         setup()
     }
 
     private init(externalConfiguration: WKWebViewConfiguration) {
+        self.pullToRefresh = .disabled
         super.init(frame: .zero, configuration: externalConfiguration)
         navigationDelegate = self
         uiDelegate = self
@@ -136,6 +175,17 @@ open class CoreWebView: WKWebView {
             guard let src = message.body as? String else { return }
             self?.loadFrame(src: src)
         }
+    }
+
+    private func addRefreshControl(color: UIColor?) {
+        scrollView.addSubview(refreshControl)
+        scrollView.bounces = true
+        refreshControl.color = color
+    }
+
+    @objc func refreshWebView(_ sender: UIRefreshControl) {
+        guard pullToRefreshNavigation == nil else { return }
+        pullToRefreshNavigation = reload()
     }
 
     public var contentInputAccessoryView: UIView? {
@@ -248,9 +298,9 @@ open class CoreWebView: WKWebView {
      The font-size property of the body tag is overriden by the OS so that's why we set the p tag's font-size.
      */
     var css: String {
-        let buttonBack = Brand.shared.buttonPrimaryBackground.ensureContrast(against: .backgroundLightest)
-        let buttonText = Brand.shared.buttonPrimaryText.ensureContrast(against: buttonBack)
-        let link = Brand.shared.linkColor.ensureContrast(against: .backgroundLightest)
+        let buttonBack = Brand.shared.buttonPrimaryBackground
+        let buttonText = Brand.shared.buttonPrimaryText
+        let link = Brand.shared.linkColor
         let font: String
         let fontCSS: String
         let style = Typography.Style.body
@@ -435,9 +485,12 @@ extension CoreWebView: WKNavigationDelegate {
         }
 
         // Check for #fragment link click
-        if action.navigationType == .linkActivated, action.sourceFrame == action.targetFrame,
-            let url = action.request.url, let fragment = url.fragment,
-            self.url?.absoluteString.split(separator: "#").first == url.absoluteString.split(separator: "#").first {
+        if action.navigationType == .linkActivated,
+           action.sourceFrame == action.targetFrame,
+           let url = action.request.url, let fragment = url.fragment,
+           let lhsString: String.SubSequence = self.url?.absoluteString.split(separator: "#").first,
+           let rhsString: String.SubSequence = url.absoluteString.split(separator: "#").first,
+           lhsString == rhsString {
             scrollIntoView(fragment: fragment)
             return decisionHandler(.allow) // let web view scroll to link too, if necessary
         }
@@ -462,6 +515,11 @@ extension CoreWebView: WKNavigationDelegate {
         linkDelegate?.finishedNavigation()
         if let fragment = url?.fragment {
             scrollIntoView(fragment: fragment)
+        }
+
+        if navigation == pullToRefreshNavigation {
+            refreshControl.endRefreshing()
+            pullToRefreshNavigation = nil
         }
     }
 

@@ -17,11 +17,12 @@
 //
 
 import AVKit
-import UIKit
-import Firebase
-import UserNotifications
 import Core
+import Firebase
+import Heap
 import SafariServices
+import UIKit
+import UserNotifications
 
 var currentStudentID: String?
 
@@ -37,6 +38,8 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
         env.window = window
         return env
     }()
+
+    private var environmentFeatureFlags: Store<GetEnvironmentFeatureFlags>?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupFirebase()
@@ -85,12 +88,18 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
 
     func setup(session: LoginSession) {
         environment.userDidLogin(session: session)
+        environmentFeatureFlags = environment.subscribe(GetEnvironmentFeatureFlags(context: Context.currentUser))
+        environmentFeatureFlags?.refresh(force: true) { _ in
+            guard let envFlags = self.environmentFeatureFlags, envFlags.error == nil else { return }
+            self.initializeTracking()
+        }
+
         updateInterfaceStyle(for: window)
         CoreWebView.keepCookieAlive(for: environment)
         currentStudentID = environment.userDefaults?.parentCurrentStudentID
         if currentStudentID == nil {
             // UX requires that students are given color schemes in a specific order.
-            // The method call below ensures that we always start with the first color scheme.    
+            // The method call below ensures that we always start with the first color scheme.
             ColorScheme.clear()
         }
         Analytics.shared.logSession(session)
@@ -137,7 +146,7 @@ class ParentAppDelegate: UIResponder, UIApplicationDelegate {
                     let value = remoteConfig.configValue(forKey: key).boolValue
                     feature.isEnabled = value
                     Firebase.Crashlytics.crashlytics().setCustomValue(value, forKey: feature.userDefaultsKey)
-                    Analytics.setUserProperty(value ? "YES" : "NO", forName: feature.rawValue)
+//                    Analytics.setUserProperty(value ? "YES" : "NO", forName: feature.rawValue)
                 }
             }
         }
@@ -156,6 +165,7 @@ extension ParentAppDelegate: LoginDelegate {
 
     func changeUser() {
         guard let window = window, !(window.rootViewController is LoginNavigationController) else { return }
+        disableTracking()
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             window.rootViewController = LoginNavigationController.create(loginDelegate: self, app: .parent)
             Analytics.shared.logScreenView(route: "/login", viewController: window.rootViewController)
@@ -194,6 +204,7 @@ extension ParentAppDelegate: LoginDelegate {
     }
 
     func userDidStopActing(as session: LoginSession) {
+        disableTracking()
         LoginSession.remove(session)
         // TODO: Deregister push notifications?
         guard environment.currentSession == session else { return }
@@ -202,6 +213,7 @@ extension ParentAppDelegate: LoginDelegate {
     }
 
     func userDidLogout(session: LoginSession) {
+        disableTracking()
         let wasCurrent = environment.currentSession == session
         API(session).makeRequest(DeleteLoginOAuthRequest(), refreshToken: false) { _, _, _ in }
         userDidStopActing(as: session)
@@ -263,7 +275,28 @@ extension ParentAppDelegate {
 
 extension ParentAppDelegate: AnalyticsHandler {
     func handleEvent(_ name: String, parameters: [String: Any]?) {
-        Analytics.logEvent(name, parameters: parameters)
+        // Google Analytics needs to be disabled for now
+//        Analytics.logEvent(name, parameters: parameters)
+    }
+
+    private func initializeTracking() {
+        guard
+            let environmentFeatureFlags,
+            !ProcessInfo.isUITest,
+            let heapID = Secret.heapID.string
+        else {
+            return
+        }
+
+        let isSendUsageMetricsEnabled = environmentFeatureFlags.isFeatureEnabled(.send_usage_metrics)
+        let options = HeapOptions()
+        options.disableTracking = !isSendUsageMetricsEnabled
+        Heap.initialize(heapID, with: options)
+        Heap.setTrackingEnabled(isSendUsageMetricsEnabled)
+    }
+
+    private func disableTracking() {
+        Heap.setTrackingEnabled(false)
     }
 }
 

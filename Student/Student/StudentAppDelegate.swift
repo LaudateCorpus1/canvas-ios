@@ -17,12 +17,13 @@
 //
 
 import AVKit
-import UIKit
-import PSPDFKit
 import CanvasCore
-import UserNotifications
-import Firebase
 import Core
+import Firebase
+import Heap
+import PSPDFKit
+import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDelegate {
@@ -36,8 +37,9 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
         env.window = window
         return env
     }()
-
+    private var environmentFeatureFlags: Store<GetEnvironmentFeatureFlags>?
     private var shouldSetK5StudentView = false
+    private var backgroundFileSubmissionAssembly: FileSubmissionAssembly?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupFirebase()
@@ -83,12 +85,18 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
     func setup(session: LoginSession) {
         environment.userDidLogin(session: session)
         environment.userDefaults?.isK5StudentView = shouldSetK5StudentView
+        environmentFeatureFlags = environment.subscribe(GetEnvironmentFeatureFlags(context: Context.currentUser))
+        environmentFeatureFlags?.refresh(force: true) { _ in
+            guard let envFlags = self.environmentFeatureFlags, envFlags.error == nil else { return }
+            self.initializeTracking()
+        }
+
         updateInterfaceStyle(for: window)
 
         CoreWebView.keepCookieAlive(for: environment)
 
-        Analytics.setUserID(session.userID)
-        Analytics.setUserProperty(session.baseURL.absoluteString, forName: "base_url")
+//        Analytics.setUserID(session.userID)
+//        Analytics.setUserProperty(session.baseURL.absoluteString, forName: "base_url")
         NotificationManager.shared.subscribeToPushChannel()
 
         GetUserProfile().fetch(environment: environment, force: true) { apiProfile, urlResponse, _ in
@@ -153,13 +161,25 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
 
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
         Logger.shared.log()
-        let manager = UploadManager(identifier: identifier)
-        manager.completionHandler = {
-            DispatchQueue.main.async {
-                completionHandler()
+
+        if identifier == FileSubmissionAssembly.ShareExtensionSessionID {
+            let backgroundAssembly = FileSubmissionAssembly.makeShareExtensionAssembly()
+            backgroundAssembly.handleBackgroundUpload {
+                DispatchQueue.main.async { [weak self] in
+                    completionHandler()
+                    self?.backgroundFileSubmissionAssembly = nil
+                }
             }
+            backgroundFileSubmissionAssembly = backgroundAssembly
+        } else {
+            let manager = UploadManager(identifier: identifier)
+            manager.completionHandler = {
+                DispatchQueue.main.async {
+                    completionHandler()
+                }
+            }
+            manager.createSession()
         }
-        manager.createSession()
     }
 
     // similar methods exist in all other app delegates
@@ -176,7 +196,7 @@ class StudentAppDelegate: UIResponder, UIApplicationDelegate, AppEnvironmentDele
                     let value = remoteConfig.configValue(forKey: key).boolValue
                     feature.isEnabled = value
                     Firebase.Crashlytics.crashlytics().setCustomValue(value, forKey: feature.userDefaultsKey)
-                    Analytics.setUserProperty(value ? "YES" : "NO", forName: feature.rawValue)
+//                    Analytics.setUserProperty(value ? "YES" : "NO", forName: feature.rawValue)
                 }
             }
         }
@@ -219,7 +239,28 @@ extension StudentAppDelegate: UNUserNotificationCenterDelegate {
 
 extension StudentAppDelegate: Core.AnalyticsHandler {
     func handleEvent(_ name: String, parameters: [String: Any]?) {
-        Analytics.logEvent(name, parameters: parameters)
+        // Google Analytics needs to be disabled for now
+//        Analytics.logEvent(name, parameters: parameters)
+    }
+
+    private func initializeTracking() {
+        guard
+            let environmentFeatureFlags,
+            !ProcessInfo.isUITest,
+            let heapID = Secret.heapID.string
+        else {
+            return
+        }
+
+        let isSendUsageMetricsEnabled = environmentFeatureFlags.isFeatureEnabled(.send_usage_metrics)
+        let options = HeapOptions()
+        options.disableTracking = !isSendUsageMetricsEnabled
+        Heap.initialize(heapID, with: options)
+        Heap.setTrackingEnabled(isSendUsageMetricsEnabled)
+    }
+
+    private func disableTracking() {
+        Heap.setTrackingEnabled(false)
     }
 }
 
@@ -265,19 +306,30 @@ extension StudentAppDelegate {
 extension StudentAppDelegate {
     func setupPageViewLogging() {
         class BackgroundAppHelper: AppBackgroundHelperProtocol {
+
+            let queue = DispatchQueue(label: "com.instructure.icanvas.app-background-helper", attributes: .concurrent)
             var tasks: [String: UIBackgroundTaskIdentifier] = [:]
+
             func startBackgroundTask(taskName: String) {
-                tasks[taskName] = UIApplication.shared.beginBackgroundTask(withName: taskName) { [weak self] in
-                    self?.tasks[taskName] = .invalid
+                queue.async(flags: .barrier) { [weak self] in
+                    self?.tasks[taskName] = UIApplication.shared.beginBackgroundTask(
+                        withName: taskName,
+                        expirationHandler: { [weak self] in
+                            self?.endBackgroundTask(taskName: taskName)
+                    })
                 }
             }
 
             func endBackgroundTask(taskName: String) {
-                if let task = tasks[taskName] {
-                    UIApplication.shared.endBackgroundTask(task)
+                queue.async(flags: .barrier) { [weak self] in
+                    if let task = self?.tasks[taskName] {
+                        self?.tasks[taskName] = .invalid
+                        UIApplication.shared.endBackgroundTask(task)
+                    }
                 }
             }
         }
+
         let helper = BackgroundAppHelper()
         PageViewEventController.instance.configure(backgroundAppHelper: helper)
     }
@@ -328,6 +380,7 @@ extension StudentAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
         shouldSetK5StudentView = false
         environment.k5.userDidLogout()
         guard let window = window, !(window.rootViewController is LoginNavigationController) else { return }
+        disableTracking()
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             window.rootViewController = LoginNavigationController.create(loginDelegate: self, app: .student)
             Analytics.shared.logScreenView(route: "/login", viewController: window.rootViewController)
@@ -360,6 +413,7 @@ extension StudentAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
     }
 
     func userDidStopActing(as session: LoginSession) {
+        disableTracking()
         LoginSession.remove(session)
         guard environment.currentSession == session else { return }
         PageViewEventController.instance.userDidChange()
@@ -370,6 +424,7 @@ extension StudentAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
     }
 
     func userDidLogout(session: LoginSession) {
+        disableTracking()
         shouldSetK5StudentView = false
         let wasCurrent = environment.currentSession == session
         API(session).makeRequest(DeleteLoginOAuthRequest(), refreshToken: false) { _, _, _ in }

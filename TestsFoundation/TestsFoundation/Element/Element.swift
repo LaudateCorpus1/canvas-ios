@@ -228,12 +228,7 @@ public extension Element {
         guard let labels = orderedLabels(file: file, line: line) else {
             return false
         }
-        for i in labels.indices {
-            if labels.dropFirst(i).starts(with: subsequence) {
-                return true
-            }
-        }
-        return false
+        return labels.indices.contains { labels.dropFirst($0).starts(with: subsequence) }
     }
 
     subscript(_ index: Int) -> Element {
@@ -241,6 +236,9 @@ public extension Element {
     }
 }
 
+/**
+ This method blocks further test execution and runs the main runloop until the given predicate doesn't return true.
+ */
 public func waitUntil(
     _ timeout: TimeInterval = 10,
     shouldFail: Bool = false,

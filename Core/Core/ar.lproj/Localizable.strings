@@ -1,6 +1,3 @@
-/* No comment provided by engineer. */
-"-" = "-";
-
 /* placeholder for the score of an ungraded submission */
 "--" = "--";
 
@@ -43,6 +40,9 @@
 /* No comment provided by engineer. */
 "%@ submitted" = "%@ تم الإرسال";
 
+/* e.g 01.02.2022 to 01.03.2022 */
+"%@ to %@" = "%1$@ إلى %2$@";
+
 /* label for conversation row with context, subject, & last message date & text */
 "%@, in %@, the last message was on %@ %@" = "%1$@، خلال %2$@، آخر رسالة تمت في %3$@ %4$@";
 
@@ -60,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "%d items" = "%d عناصر";
+
+/* No comment provided by engineer. */
+"%d Minutes" = "%d دقائق";
 
 /* Number of missing submissions */
 "%d missing" = "%d مفقود";
@@ -90,6 +93,9 @@
 
 /* No comment provided by engineer. */
 "Access" = "الوصول";
+
+/* No comment provided by engineer. */
+"Access Code:" = "رمز الوصول:";
 
 /* No comment provided by engineer. */
 "Account Group" = "مجموعة الحساب";
@@ -137,6 +143,9 @@
 "Add message" = "إضافة رسالة";
 
 /* No comment provided by engineer. */
+"Add optional comment" = "إضافة تعليق اختياري";
+
+/* No comment provided by engineer. */
 "Add Planner Note" = "إضافة ملاحظة مخطِط";
 
 /* No comment provided by engineer. */
@@ -147,6 +156,12 @@
 
 /* No comment provided by engineer. */
 "Administrative Notifications" = "الإعلامات الإدارية";
+
+/* e.g. After 01.02.2022 */
+"After %@" = "بعد %@";
+
+/* No comment provided by engineer. */
+"After Last Attempt" = "بعد المحاولة الأخيرة";
 
 /* No comment provided by engineer. */
 "Alerts" = "التنبيهات";
@@ -180,6 +195,12 @@
 
 /* No comment provided by engineer. */
 "Allow users to comment" = "السماح للمستخدمين بالتعليق";
+
+/* No comment provided by engineer. */
+"Allowed Attempts:" = "المحاولات المسموح بها:";
+
+/* No comment provided by engineer. */
+"Always" = "دائمًا";
 
 /* No comment provided by engineer. */
 "Announcement" = "الإعلان";
@@ -260,6 +281,9 @@
 "Assignment Grade Below %d" = "تقييم المهمة أدناه %d";
 
 /* No comment provided by engineer. */
+"Assignment Group:" = "مجموعة المهام:";
+
+/* No comment provided by engineer. */
 "Assignment missing" = "مهمة مفقودة";
 
 /* No comment provided by engineer. */
@@ -332,6 +356,9 @@
 "Available Until:" = "متوفر حتى:";
 
 /* No comment provided by engineer. */
+"Average" = "متوسط";
+
+/* No comment provided by engineer. */
 "Back" = "عودة";
 
 /* No comment provided by engineer. */
@@ -374,6 +401,9 @@
 "Cancel" = "إلغاء";
 
 /* No comment provided by engineer. */
+"Cancel Submission?" = "هل تريد إلغاء الإرسال؟";
+
+/* No comment provided by engineer. */
 "Canvas Guides" = "Canvas Guides";
 
 /* No comment provided by engineer. */
@@ -399,12 +429,6 @@
 
 /* No comment provided by engineer. */
 "Casual question or suggestion" = "مجرد سؤال عابر أو اقتراح";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to grid" = "تغيير تخطيط لوحة المعلومات إلى شبكة";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to list" = "تغيير تخطيط لوحة المعلومات إلى قائمة";
 
 /* No comment provided by engineer. */
 "Change User" = "تغيير المستخدم";
@@ -809,6 +833,9 @@
 "Error" = "خطأ";
 
 /* No comment provided by engineer. */
+"Error Details" = "تفاصيل الخطأ";
+
+/* No comment provided by engineer. */
 "Error Saving. Tap to retry." = "خطأ أثناء الحفظ. اضغط لإعادة المحاولة.";
 
 /* No comment provided by engineer. */
@@ -851,6 +878,9 @@
 "Failed to save image" = "تعذر حفظ الصورة";
 
 /* No comment provided by engineer. */
+"Failed to start upload." = "تعذر بدء التحميل.";
+
+/* No comment provided by engineer. */
 "Failed upload" = "فشل التحميل";
 
 /* No comment provided by engineer. */
@@ -870,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "File" = "الملف";
+
+/* No comment provided by engineer. */
+"File (fileName) size (size)." = "حجم الملف (fileName) (الحجم).";
 
 /* No comment provided by engineer. */
 "File Details" = "تفاصيل الملف";
@@ -962,6 +995,9 @@
 "Graded" = "تم تقييم الدرجة";
 
 /* No comment provided by engineer. */
+"Graded Quiz" = "اختبار موجز تم تقييم درجاته";
+
+/* No comment provided by engineer. */
 "Graded Surveys" = "استطلاعات تم تقييمها";
 
 /* No comment provided by engineer. */
@@ -995,10 +1031,16 @@
 "Help your students with this assignment by adding instructions." = "ساعد طلابك لإنجاز هذه المهمة من خلال إضافة تعليمات.";
 
 /* No comment provided by engineer. */
+"Hide" = "إخفاء";
+
+/* No comment provided by engineer. */
 "Hide content for %@" = "إخفاء محتوى لـ %@";
 
 /* No comment provided by engineer. */
 "High: %@" = "المرتفع: %@";
+
+/* No comment provided by engineer. */
+"Highest" = "الأعلى";
 
 /* No comment provided by engineer. */
 "Homeroom" = "جلسة التسجيل";
@@ -1050,6 +1092,9 @@
 
 /* No comment provided by engineer. */
 "Inbox" = "علبة الوارد";
+
+/* No comment provided by engineer. */
+"Incompatible File Type" = "نوع ملف غير متوافق";
 
 /* No comment provided by engineer. */
 "Incomplete" = "غير مكتمل";
@@ -1133,6 +1178,9 @@
 "Late Grading" = "تقييم متأخر";
 
 /* No comment provided by engineer. */
+"Latest" = "الأدنى";
+
+/* No comment provided by engineer. */
 "Launch External Tool" = "تشغيل الأداة الخارجية";
 
 /* No comment provided by engineer. */
@@ -1197,6 +1245,9 @@
 
 /* No comment provided by engineer. */
 "Locate QR Code" = "ابحث عن رمز QR";
+
+/* No comment provided by engineer. */
+"Lock Questions After Answering:" = "تأمين الأسئلة بعد الإجابة:";
 
 /* No comment provided by engineer. */
 "locked" = "مؤمّن";
@@ -1358,6 +1409,9 @@
 "Nickname" = "اللقب";
 
 /* No comment provided by engineer. */
+"No" = "لا";
+
+/* No comment provided by engineer. */
 "No Announcements" = "لا توجد إعلانات";
 
 /* No comment provided by engineer. */
@@ -1430,6 +1484,9 @@
 "No supported files to submit" = "لا توجد ملفات مدعومة للإرسال";
 
 /* No comment provided by engineer. */
+"No time Limit" = "لا يوجد حد زمني";
+
+/* No comment provided by engineer. */
 "None" = "بلا";
 
 /* No comment provided by engineer. */
@@ -1487,7 +1544,13 @@
 "On Paper" = "على الورق";
 
 /* No comment provided by engineer. */
-"One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = "One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?";
+"One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = ". قد يؤدي تسجيل الخروج إلى إيقافه. هل تريد بالتأكيد تسجيل الخروج؟\nأحد إرسالاتك ما زالت قيد التحمي";
+
+/* No comment provided by engineer. */
+"One or more files failed to upload. Check your internet connection and retry to submit." = "تعذر تحميل ملف أو أكثر. تحقق من اتصالك بالإنترنت وأعد محاولة الإرسال.";
+
+/* No comment provided by engineer. */
+"One Question at a Time:" = "سؤال واحد في كل مرة:";
 
 /* No comment provided by engineer. */
 "Only available to students with link" = "متاح فقط للطلاب الذين لديهم رابط";
@@ -1616,10 +1679,19 @@
 "Practice Quizzes" = "التدريب على اختبارات موجزة";
 
 /* No comment provided by engineer. */
+"Practice quizzes & surveys do not have detail views." = "اختبارات التدريب والاستبيانات لا تحتوي على طرق عرض تفصيلية.";
+
+/* No comment provided by engineer. */
 "Preferences" = "التفضيلات";
 
 /* No comment provided by engineer. */
+"Preparing Files For Upload" = "جارٍ تجهيز الملفات للتحميل";
+
+/* No comment provided by engineer. */
 "Prerequisite: %@" = "المتطلبات الأساسية: %@";
+
+/* No comment provided by engineer. */
+"Preview Quiz" = "معاينة الاختبار الموجز";
 
 /* No comment provided by engineer. */
 "Previous Logins" = "عمليات تسجيل الدخول السابقة";
@@ -1670,6 +1742,9 @@
 "Quiz Details" = "تفاصيل الاختبار الموجز";
 
 /* No comment provided by engineer. */
+"Quiz Type:" = "نوع الاختبار الموجز:";
+
+/* No comment provided by engineer. */
 "Quizzes" = "الاختبارات الموجزة";
 
 /* No comment provided by engineer. */
@@ -1716,6 +1791,12 @@
 
 /* No comment provided by engineer. */
 "Remove File" = "إزالة الملف";
+
+/* No comment provided by engineer. */
+"Remove file from submission." = "إزالة الملف من الإرسال.";
+
+/* No comment provided by engineer. */
+"Remove From List?" = "هل تريد الإزالة من القائمة؟";
 
 /* No comment provided by engineer. */
 "Removed %1$@" = "تمت الإزالة %1$@";
@@ -1790,6 +1871,9 @@
 "Score at least %@" = "الحصول على الأقل على درجة %@";
 
 /* No comment provided by engineer. */
+"Score to Keep:" = "الدرجة التي يتعين الاحتفاظ بها:";
+
+/* No comment provided by engineer. */
 "Scored above %g" = "تم إحراز درجات أعلى من %g";
 
 /* No comment provided by engineer. */
@@ -1835,7 +1919,7 @@
 "Select Course" = "تحديد مساق";
 
 /* No comment provided by engineer. */
-"Select grading period" = "حدد فترة التقييم";
+"Select Grading Period" = "تحديد فترة التقييم";
 
 /* No comment provided by engineer. */
 "Select Impact" = "تحديد التأثير";
@@ -1886,6 +1970,9 @@
 "Show a month at a time" = "أظهر شهراً كل مرة";
 
 /* No comment provided by engineer. */
+"Show Correct Answers:" = "إظهار الإجابات الصحيحة:";
+
+/* No comment provided by engineer. */
 "Show Course Summary" = "إظهار موجز المساق";
 
 /* No comment provided by engineer. */
@@ -1893,6 +1980,9 @@
 
 /* No comment provided by engineer. */
 "Show more options" = "إظهار خيارات أكثر";
+
+/* No comment provided by engineer. */
+"Shuffle Answers:" = "تبديل الإجابات:";
 
 /* No comment provided by engineer. */
 "Since this is a group discussion, each group has its own conversation for this topic. Here are the discussions you have access to." = "بما أنها مناقشة لمجموعات، فإن لكل مجموعة محادثة خاصة لهذا الموضوع. فيما يلي النقاشات التي يمكنك الوصول إليها:";
@@ -1967,13 +2057,28 @@
 "Subject" = "الموضوع";
 
 /* No comment provided by engineer. */
+"Submission" = "الإرسال";
+
+/* No comment provided by engineer. */
 "Submission %@, %@, %@" = "إرسال %1$@، %2$@، %3$@";
 
 /* No comment provided by engineer. */
 "Submission Comment" = "تعليق الإرسال";
 
 /* No comment provided by engineer. */
+"Submission Failed" = "فشل الإرسال";
+
+/* No comment provided by engineer. */
+"Submission failed due to unknown error." = "فشل الإرسال بسب خطأ غير معلوم.";
+
+/* No comment provided by engineer. */
+"Submission Success!" = "نجح الإرسال!";
+
+/* No comment provided by engineer. */
 "Submission Types" = "أنواع الإرسال";
+
+/* No comment provided by engineer. */
+"Submission Uploaded" = "تم تحميل الإرسال";
 
 /* No comment provided by engineer. */
 "Submissions" = "الإرسالات";
@@ -2019,6 +2124,9 @@
 
 /* No comment provided by engineer. */
 "Take Photo" = "التقاط صورة";
+
+/* No comment provided by engineer. */
+"Tap here for details" = "اضغط هنا لمعرفة التفاصيل";
 
 /* No comment provided by engineer. */
 "Tap here for help." = "اضغط هنا للحصول على المساعدة.";
@@ -2067,6 +2175,9 @@
 
 /* No comment provided by engineer. */
 "The app needs to restart to use the new language settings. Please relaunch the app." = "يحتاج التطبيق لإعادة التشغيل لاستخدام إعدادات اللغة الجديدة. يرجى إعادة تشغيل التطبيق.";
+
+/* No comment provided by engineer. */
+"The submission process was terminated by the operating system." = "تم إيقاف عملية الإرسال بواسطة نظام التشغيل.";
 
 /* No comment provided by engineer. */
 "There are no active assignments in this course." = "لا توجد أي مهام نشطة في هذا المساق.";
@@ -2159,10 +2270,16 @@
 "This page has been disabled for this course." = "تم تعطيل هذه الصفحة لهذا المساق.";
 
 /* No comment provided by engineer. */
+"This will cancel and delete your upload." = "سيؤدي هذا إلى إلغاء وحذف التحميل.";
+
+/* No comment provided by engineer. */
 "This will remove the due date and all of the associated assignees." = "سيؤدي هذا إلى إزالة تاريخ الاستحقاق وجميع المعين لهم المقترنين.";
 
 /* No comment provided by engineer. */
 "Time elapsed" = "الوقت المنقضي";
+
+/* No comment provided by engineer. */
+"Time Limit:" = "الحد الزمني:";
 
 /* No comment provided by engineer. */
 "Title" = "العنوان";
@@ -2230,11 +2347,23 @@
 /* No comment provided by engineer. */
 "Unsupported Item" = "عنصر غير مدعوم";
 
+/* e.g. Until 01.02.2022 */
+"Until %@" = "الموعد النهائي %@";
+
 /* No comment provided by engineer. */
 "Updated Language Settings" = "إعدادات اللغة المحدثة";
 
 /* No comment provided by engineer. */
 "Updating" = "جارٍ التحديث";
+
+/* No comment provided by engineer. */
+"Upload completed." = "اكتمل التحميل.";
+
+/* No comment provided by engineer. */
+"Upload failed due to unknown reason." = "تعذر التحميل لسبب غير معلوم.";
+
+/* No comment provided by engineer. */
+"Upload failed." = "فشل التحميل.";
 
 /* No comment provided by engineer. */
 "Upload File" = "تحميل ملف";
@@ -2243,10 +2372,16 @@
 "Upload in progress" = "التحميل قيد التقدم";
 
 /* No comment provided by engineer. */
+"Upload in progress (Int(100 * progress))%" = "التحميل قيد التقدم (عدد صحيح (تقدم * 100))%";
+
+/* No comment provided by engineer. */
 "Uploading %@ is at %@" = "تحميل %1$@ في %2$@";
 
 /* Uploading X KB of Y MB */
 "Uploading %@ of %@" = "جارٍ تحميل %1$@ من %2$@";
+
+/* No comment provided by engineer. */
+"Uploading Submission" = "جارٍ تحميل الإرسال";
 
 /* No comment provided by engineer. */
 "Uploading..." = "يتم الآن التحميل...";
@@ -2301,6 +2436,9 @@
 
 /* No comment provided by engineer. */
 "View Previous Announcements" = "عرض إعلانات سابقة";
+
+/* No comment provided by engineer. */
+"View Responses:" = "عرض الاستجابات:";
 
 /* No comment provided by engineer. */
 "Viewed" = "تمت لمشاهدة";
@@ -2394,6 +2532,9 @@
 
 /* No comment provided by engineer. */
 "Your Email" = "بريدك الإلكتروني";
+
+/* No comment provided by engineer. */
+"Your file was successfully submitted.\nEnjoy your day!" = "تم إرسال ملفك بنجاح.\nطاب يومك!";
 
 /* No comment provided by engineer. */
 "Your to do list is empty. Time to recharge." = "قائمة المهام الخاصة بك فارغة. حان وقت إعادة الشحن.";

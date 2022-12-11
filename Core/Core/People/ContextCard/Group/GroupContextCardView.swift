@@ -39,7 +39,7 @@ public struct GroupContextCardView: View {
         if model.shouldShowMessageButton {
             Button(action: { model.openNewMessageComposer(controller: controller.value) }, label: {
                 Image.emailLine
-                    .foregroundColor(Color(Brand.shared.navTextColor.ensureContrast(against: Brand.shared.navBackground)))
+                    .foregroundColor(Color(Brand.shared.navTextColor))
             })
             .accessibility(label: Text("Send message", bundle: .core))
             .identifier("ContextCard.emailContact")
@@ -48,7 +48,8 @@ public struct GroupContextCardView: View {
 
     @ViewBuilder var contextCard: some View {
         if model.pending {
-            CircleProgress()
+            ProgressView()
+                .progressViewStyle(.indeterminateCircle())
         } else {
             if let user = model.user.first, let group = model.group.first {
                 VStack(spacing: 10) {

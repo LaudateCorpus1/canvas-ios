@@ -1,6 +1,3 @@
-/* No comment provided by engineer. */
-"-" = "-";
-
 /* placeholder for the score of an ungraded submission */
 "--" = "--";
 
@@ -43,6 +40,9 @@
 /* No comment provided by engineer. */
 "%@ submitted" = "%@ skilað";
 
+/* e.g 01.02.2022 to 01.03.2022 */
+"%@ to %@" = "%1$@ til %2$@";
+
 /* label for conversation row with context, subject, & last message date & text */
 "%@, in %@, the last message was on %@ %@" = "%1$@, í %2$@, síðustu skilaboðin voru þann %3$@ %4$@";
 
@@ -60,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "%d items" = "%d atriði";
+
+/* No comment provided by engineer. */
+"%d Minutes" = "%d Mínútur";
 
 /* Number of missing submissions */
 "%d missing" = "%d vantar";
@@ -90,6 +93,9 @@
 
 /* No comment provided by engineer. */
 "Access" = "Aðgangur";
+
+/* No comment provided by engineer. */
+"Access Code:" = "Aðgangskóði:";
 
 /* No comment provided by engineer. */
 "Account Group" = "Hópreikningur";
@@ -137,6 +143,9 @@
 "Add message" = "Bæta við skilaboðum";
 
 /* No comment provided by engineer. */
+"Add optional comment" = "Bæta við valkvæðri athugasemd";
+
+/* No comment provided by engineer. */
 "Add Planner Note" = "Bæta við skipuleggjara athugasemd";
 
 /* No comment provided by engineer. */
@@ -147,6 +156,12 @@
 
 /* No comment provided by engineer. */
 "Administrative Notifications" = "Tilkynningar stjórnenda";
+
+/* e.g. After 01.02.2022 */
+"After %@" = "Eftir %@";
+
+/* No comment provided by engineer. */
+"After Last Attempt" = "Eftir síðustu tilraun";
 
 /* No comment provided by engineer. */
 "Alerts" = "Viðvaranir";
@@ -180,6 +195,12 @@
 
 /* No comment provided by engineer. */
 "Allow users to comment" = "Leyfa notendum að gera athugasemdir";
+
+/* No comment provided by engineer. */
+"Allowed Attempts:" = "Heimilaðar tilraunir:";
+
+/* No comment provided by engineer. */
+"Always" = "Alltaf";
 
 /* No comment provided by engineer. */
 "Announcement" = "Tilkynning";
@@ -260,6 +281,9 @@
 "Assignment Grade Below %d" = "Verkefnaeinkunn að neðan %d";
 
 /* No comment provided by engineer. */
+"Assignment Group:" = "Verkefnahópur:";
+
+/* No comment provided by engineer. */
 "Assignment missing" = "Verkefni vantar";
 
 /* No comment provided by engineer. */
@@ -332,6 +356,9 @@
 "Available Until:" = "Tiltækt til:";
 
 /* No comment provided by engineer. */
+"Average" = "Meðaltal";
+
+/* No comment provided by engineer. */
 "Back" = "Til baka";
 
 /* No comment provided by engineer. */
@@ -374,6 +401,9 @@
 "Cancel" = "Hætta við";
 
 /* No comment provided by engineer. */
+"Cancel Submission?" = "Hætta við skil?";
+
+/* No comment provided by engineer. */
 "Canvas Guides" = "Canvas leiðarvísar";
 
 /* No comment provided by engineer. */
@@ -399,12 +429,6 @@
 
 /* No comment provided by engineer. */
 "Casual question or suggestion" = "Almenn spurning eða uppástunga";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to grid" = "Breyta skipulagi skjáborðs í net";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to list" = "Breyta skipulagi skjáborðs í lista";
 
 /* No comment provided by engineer. */
 "Change User" = "Breyta notanda";
@@ -809,6 +833,9 @@
 "Error" = "Villa";
 
 /* No comment provided by engineer. */
+"Error Details" = "Upplýsingar um villu";
+
+/* No comment provided by engineer. */
 "Error Saving. Tap to retry." = "Villa við að vista. Smelltu til að reyna aftur.";
 
 /* No comment provided by engineer. */
@@ -851,6 +878,9 @@
 "Failed to save image" = "Ekki tókst að vista mynd";
 
 /* No comment provided by engineer. */
+"Failed to start upload." = "Tókst ekki að byrja upphleðslu.";
+
+/* No comment provided by engineer. */
 "Failed upload" = "Upphleðsla mistókst";
 
 /* No comment provided by engineer. */
@@ -870,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "File" = "Skrá";
+
+/* No comment provided by engineer. */
+"File (fileName) size (size)." = "Skrá (fileName) stærð (stærð).";
 
 /* No comment provided by engineer. */
 "File Details" = "Upplýsingar um skrá";
@@ -962,6 +995,9 @@
 "Graded" = "Metið";
 
 /* No comment provided by engineer. */
+"Graded Quiz" = "Metið próf";
+
+/* No comment provided by engineer. */
 "Graded Surveys" = "Kannanir með einkunn";
 
 /* No comment provided by engineer. */
@@ -995,10 +1031,16 @@
 "Help your students with this assignment by adding instructions." = "Hjálpaðu nemendum þínum með þetta verkefni með því að bæta við leiðbeiningum.";
 
 /* No comment provided by engineer. */
+"Hide" = "Fela";
+
+/* No comment provided by engineer. */
 "Hide content for %@" = "Fela efni fyrir %@";
 
 /* No comment provided by engineer. */
 "High: %@" = "Hátt: %@";
+
+/* No comment provided by engineer. */
+"Highest" = "Hæst";
 
 /* No comment provided by engineer. */
 "Homeroom" = "Námssalur";
@@ -1050,6 +1092,9 @@
 
 /* No comment provided by engineer. */
 "Inbox" = "Innhólf";
+
+/* No comment provided by engineer. */
+"Incompatible File Type" = "Ósamrýmanleg skráargerð";
 
 /* No comment provided by engineer. */
 "Incomplete" = "Ólokið";
@@ -1133,6 +1178,9 @@
 "Late Grading" = "Síðbúin einkunnagjöf";
 
 /* No comment provided by engineer. */
+"Latest" = "Nýjast";
+
+/* No comment provided by engineer. */
 "Launch External Tool" = "Nota ytra verkfæri";
 
 /* No comment provided by engineer. */
@@ -1197,6 +1245,9 @@
 
 /* No comment provided by engineer. */
 "Locate QR Code" = "Finna QR kóða";
+
+/* No comment provided by engineer. */
+"Lock Questions After Answering:" = "Læsa spurningum eftir svör:";
 
 /* No comment provided by engineer. */
 "locked" = "læst";
@@ -1358,6 +1409,9 @@
 "Nickname" = "Gælunafn";
 
 /* No comment provided by engineer. */
+"No" = "Nei";
+
+/* No comment provided by engineer. */
 "No Announcements" = "Engar tilkynningar";
 
 /* No comment provided by engineer. */
@@ -1430,6 +1484,9 @@
 "No supported files to submit" = "Engar studdar skrár til að skila";
 
 /* No comment provided by engineer. */
+"No time Limit" = "Engin tímamörk";
+
+/* No comment provided by engineer. */
 "None" = "Ekkert";
 
 /* No comment provided by engineer. */
@@ -1488,6 +1545,12 @@
 
 /* No comment provided by engineer. */
 "One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = "Enn er verið að hlaða upp skilunum þínum. Útskráning gæti truflað ferlið.\nViltu örugglega skrá þig út?";
+
+/* No comment provided by engineer. */
+"One or more files failed to upload. Check your internet connection and retry to submit." = "Ekki tókst að hlaða upp einni eða fleiri skrám. Athugaðu nettenginguna þína og reyndu aftur að skila.";
+
+/* No comment provided by engineer. */
+"One Question at a Time:" = "Ein spurning í einu:";
 
 /* No comment provided by engineer. */
 "Only available to students with link" = "Aðeins aðgengilegt nemendum með tengil";
@@ -1616,10 +1679,19 @@
 "Practice Quizzes" = "Æfingapróf";
 
 /* No comment provided by engineer. */
+"Practice quizzes & surveys do not have detail views." = "Æfingarpróf og kannanir eru ekki með upplýsingaskjá.";
+
+/* No comment provided by engineer. */
 "Preferences" = "Kjörstillingar";
 
 /* No comment provided by engineer. */
+"Preparing Files For Upload" = "Undirbúa skrár fyrir upphleðslu";
+
+/* No comment provided by engineer. */
 "Prerequisite: %@" = "Forsenda: %@";
+
+/* No comment provided by engineer. */
+"Preview Quiz" = "Forskoða próf";
 
 /* No comment provided by engineer. */
 "Previous Logins" = "Fyrri innskráningar";
@@ -1670,6 +1742,9 @@
 "Quiz Details" = "Prófupplýsingar";
 
 /* No comment provided by engineer. */
+"Quiz Type:" = "Tegund prófs:";
+
+/* No comment provided by engineer. */
 "Quizzes" = "Próf";
 
 /* No comment provided by engineer. */
@@ -1716,6 +1791,12 @@
 
 /* No comment provided by engineer. */
 "Remove File" = "Fjarlægja skrá";
+
+/* No comment provided by engineer. */
+"Remove file from submission." = "Fjarlægja skrá úr skilum.";
+
+/* No comment provided by engineer. */
+"Remove From List?" = "Fjarlægja af lista?";
 
 /* No comment provided by engineer. */
 "Removed %1$@" = "Fjarlægt %1$@";
@@ -1790,6 +1871,9 @@
 "Score at least %@" = "Ná minnst %@";
 
 /* No comment provided by engineer. */
+"Score to Keep:" = "Varðveita einkunn:";
+
+/* No comment provided by engineer. */
 "Scored above %g" = "Einkunn gefin fyrir ofan %g";
 
 /* No comment provided by engineer. */
@@ -1835,7 +1919,7 @@
 "Select Course" = "Velja námskeið";
 
 /* No comment provided by engineer. */
-"Select grading period" = "Velja einkunnatímabil";
+"Select Grading Period" = "Velja einkunnatímabil";
 
 /* No comment provided by engineer. */
 "Select Impact" = "Velja áhrif";
@@ -1886,6 +1970,9 @@
 "Show a month at a time" = "Sýna mánuð í einu";
 
 /* No comment provided by engineer. */
+"Show Correct Answers:" = "Sýna rétt svör:";
+
+/* No comment provided by engineer. */
 "Show Course Summary" = "Sýna námskeiðsyfirlit";
 
 /* No comment provided by engineer. */
@@ -1893,6 +1980,9 @@
 
 /* No comment provided by engineer. */
 "Show more options" = "Sýna fleiri möguleika";
+
+/* No comment provided by engineer. */
+"Shuffle Answers:" = "Stokka svör:";
 
 /* No comment provided by engineer. */
 "Since this is a group discussion, each group has its own conversation for this topic. Here are the discussions you have access to." = "Þar sem þetta er hópumræða, hefur hver hópur eigið samtal um þetta efni. Þetta er það sem þú hefur aðgang að.";
@@ -1967,13 +2057,28 @@
 "Subject" = "Efni";
 
 /* No comment provided by engineer. */
+"Submission" = "Skil";
+
+/* No comment provided by engineer. */
 "Submission %@, %@, %@" = "Skil %1$@, %2$@, %3$@";
 
 /* No comment provided by engineer. */
 "Submission Comment" = "Athugasemd með skilum";
 
 /* No comment provided by engineer. */
+"Submission Failed" = "Mistókst að skila";
+
+/* No comment provided by engineer. */
+"Submission failed due to unknown error." = "Skil mistókust vegna óþekktrar villu.";
+
+/* No comment provided by engineer. */
+"Submission Success!" = "Skil tókust!";
+
+/* No comment provided by engineer. */
 "Submission Types" = "Tegundir skila";
+
+/* No comment provided by engineer. */
+"Submission Uploaded" = "Skilum hlaðið upp";
 
 /* No comment provided by engineer. */
 "Submissions" = "Skil";
@@ -2019,6 +2124,9 @@
 
 /* No comment provided by engineer. */
 "Take Photo" = "Taka mynd";
+
+/* No comment provided by engineer. */
+"Tap here for details" = "Smelltu hér til að fá upplýsingar";
 
 /* No comment provided by engineer. */
 "Tap here for help." = "Smelltu hér til að fá hjálp.";
@@ -2067,6 +2175,9 @@
 
 /* No comment provided by engineer. */
 "The app needs to restart to use the new language settings. Please relaunch the app." = "Appið þarf að endurræsa til að nota nýju tungumálastillinguna. Endurræstu appið.";
+
+/* No comment provided by engineer. */
+"The submission process was terminated by the operating system." = "Skilaferlinu var hætt af stýrikerfinu.";
 
 /* No comment provided by engineer. */
 "There are no active assignments in this course." = "Það eru engin virk verkefni í þessu námskeiði.";
@@ -2159,10 +2270,16 @@
 "This page has been disabled for this course." = "Slökkt hefur verið á þessari síðu fyrir þetta námskeið.";
 
 /* No comment provided by engineer. */
+"This will cancel and delete your upload." = "Þetta hættir við og eyðir upphleðslunni þinni.";
+
+/* No comment provided by engineer. */
 "This will remove the due date and all of the associated assignees." = "Þetta fjarlægir skiladag og alla tengda viðtakendur.";
 
 /* No comment provided by engineer. */
 "Time elapsed" = "Liðinn tími";
+
+/* No comment provided by engineer. */
+"Time Limit:" = "Tímamörk:";
 
 /* No comment provided by engineer. */
 "Title" = "Titill";
@@ -2230,11 +2347,23 @@
 /* No comment provided by engineer. */
 "Unsupported Item" = "Óstutt atriði";
 
+/* e.g. Until 01.02.2022 */
+"Until %@" = "Þar til %@";
+
 /* No comment provided by engineer. */
 "Updated Language Settings" = "Uppfærðar tungumálastillingar";
 
 /* No comment provided by engineer. */
 "Updating" = "Uppfæri";
+
+/* No comment provided by engineer. */
+"Upload completed." = "Upphleðslu lokið.";
+
+/* No comment provided by engineer. */
+"Upload failed due to unknown reason." = "Upphleðsla mistókst af óþekktri ástæðu.";
+
+/* No comment provided by engineer. */
+"Upload failed." = "Upphleðsla mistókst.";
 
 /* No comment provided by engineer. */
 "Upload File" = "Hlaða upp skrá";
@@ -2243,10 +2372,16 @@
 "Upload in progress" = "Upphleðsla í gangi";
 
 /* No comment provided by engineer. */
+"Upload in progress (Int(100 * progress))%" = "Upphleðsla í gangi (Int(100 * framvinda))%";
+
+/* No comment provided by engineer. */
 "Uploading %@ is at %@" = "Upphleðsla %1$@ er í %2$@";
 
 /* Uploading X KB of Y MB */
 "Uploading %@ of %@" = "Hleð upp %1$@ af %2$@";
+
+/* No comment provided by engineer. */
+"Uploading Submission" = "Hlaða upp skilum";
 
 /* No comment provided by engineer. */
 "Uploading..." = "Hleð upp...";
@@ -2301,6 +2436,9 @@
 
 /* No comment provided by engineer. */
 "View Previous Announcements" = "Skoða fyrri tilkynningar";
+
+/* No comment provided by engineer. */
+"View Responses:" = "Skoða svör:";
 
 /* No comment provided by engineer. */
 "Viewed" = "Skoðað";
@@ -2394,6 +2532,9 @@
 
 /* No comment provided by engineer. */
 "Your Email" = "Netfangið þitt";
+
+/* No comment provided by engineer. */
+"Your file was successfully submitted.\nEnjoy your day!" = "Skil skjals tókust.\nNjóttu dagsins!";
 
 /* No comment provided by engineer. */
 "Your to do list is empty. Time to recharge." = "Verkefnalistinn þinn er tómur. Kominn tími á að hlaða rafhlöðurnar.";

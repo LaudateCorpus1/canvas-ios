@@ -19,6 +19,7 @@
 import SwiftUI
 
 public struct DashboardCardView: View {
+    @StateObject var viewModel: DashboardViewModel
     @ObservedObject var cards: DashboardCardsViewModel
     @ObservedObject var colors: Store<GetCustomColors>
     @ObservedObject var groups: Store<GetDashboardGroups>
@@ -26,8 +27,10 @@ public struct DashboardCardView: View {
     @ObservedObject var settings: Store<GetUserSettings>
     @ObservedObject var conferencesViewModel = DashboardConferencesViewModel()
     @ObservedObject var invitationsViewModel = DashboardInvitationsViewModel()
-    @ObservedObject var layoutViewModel = DashboardLayoutViewModel()
+    @ObservedObject var layoutViewModel: DashboardLayoutViewModel
+    @ObservedObject var fileUploadNotificationCardViewModel = FileUploadNotificationCardListViewModel()
 
+    @Environment(\.scenePhase) var scenePhase
     @Environment(\.appEnvironment) var env
     @Environment(\.viewController) var controller
 
@@ -39,42 +42,84 @@ public struct DashboardCardView: View {
     private let verticalSpacing: CGFloat = 16
 
     public init(shouldShowGroupList: Bool, showOnlyTeacherEnrollment: Bool) {
-        self.cards = DashboardCardsViewModel(showOnlyTeacherEnrollment: showOnlyTeacherEnrollment)
+        cards = DashboardCardsViewModel(showOnlyTeacherEnrollment: showOnlyTeacherEnrollment)
         self.shouldShowGroupList = shouldShowGroupList
         let env = AppEnvironment.shared
+        layoutViewModel = DashboardLayoutViewModel(interactor: DashboardSettingsInteractorLive(environment: env, defaults: env.userDefaults!))
         colors = env.subscribe(GetCustomColors())
         groups = env.subscribe(GetDashboardGroups())
         notifications = env.subscribe(GetAccountNotifications())
         settings = env.subscribe(GetUserSettings(userID: "self"))
+        _viewModel = StateObject(wrappedValue: DashboardViewModel(environment: env))
     }
 
     public var body: some View {
         GeometryReader { geometry in
-            ScrollView {
+            RefreshableScrollView {
                 VStack(spacing: 0) {
-                    CircleRefresh { endRefreshing in
-                        refresh(force: true, onComplete: endRefreshing)
-                    }
+                    fileUploadNotificationCards()
                     list(CGSize(width: geometry.size.width - 32, height: geometry.size.height))
                 }
                 .padding(.horizontal, verticalSpacing)
             }
+            refreshAction: { onComplete in
+                refresh(force: true, onComplete: onComplete)
+            }
         }
         .background(Color.backgroundLightest.edgesIgnoringSafeArea(.all))
         .navigationBarGlobal()
-        .navigationBarItems(leading: menuButton, trailing: layoutToggleButton)
+        .navigationBarItems(leading: menuButton, trailing: settingsButton)
         .onAppear {
             refresh(force: false) {
                 let env = AppEnvironment.shared
-                if env.userDefaults?.interfaceStyle == nil && env.currentSession?.isFakeStudent == false {
+                if env.userDefaults?.interfaceStyle == nil, env.currentSession?.isFakeStudent == false {
                     controller.value.showThemeSelectorAlert()
                 }
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            fileUploadNotificationCardViewModel.sceneDidBecomeActive.send(())
+        }
         .onReceive(NotificationCenter.default.publisher(for: .showGradesOnDashboardDidChange).receive(on: DispatchQueue.main)) { _ in
-            showGrade = env.userDefaults?.showGradesOnDashboard == true
+            withAnimation {
+                showGrade = env.userDefaults?.showGradesOnDashboard == true
+            }
         }
         .onReceive(invitationsViewModel.coursesChanged) { _ in refresh(force: true) }
+        .onReceive(viewModel.showSettings) { event in
+            showSettings(event.view, viewSize: event.viewSize)
+        }
+    }
+
+    private func showSettings(_ settingsViewController: UIViewController, viewSize: CGSize) {
+        settingsViewController.preferredContentSize = viewSize
+        settingsViewController.modalPresentationStyle = .popover
+
+        // Position the popover's arrow to point to the settings button
+        if let popoverController = settingsViewController.popoverPresentationController {
+            var navButtonView = controller.value.navigationItem.rightBarButtonItem?.customView
+
+            if navButtonView == nil,
+               #available(iOS 16.0, *),
+               let trailingView = controller.value.navigationItem.trailingItemGroups.first?.barButtonItems.first?.customView {
+                navButtonView = trailingView
+            }
+
+            popoverController.sourceView = navButtonView
+            popoverController.sourceRect = CGRect(x: 26, y: 35, width: 0, height: 0)
+
+            if #unavailable(iOS 15) {
+                // Center the arrow on iOS 14
+                popoverController.sourceRect = popoverController.sourceRect.offsetBy(dx: -4, dy: 0)
+            }
+        }
+
+        env.router.show(
+            settingsViewController,
+            from: controller,
+            options: .modal(.popover),
+            analyticsRoute: "/dashboard/settings"
+        )
     }
 
     private func setStyle(style: UIUserInterfaceStyle?) {
@@ -89,7 +134,7 @@ public struct DashboardCardView: View {
             env.router.route(to: "/profile", from: controller, options: .modal())
         }) {
             Image.hamburgerSolid
-                .foregroundColor(Color(Brand.shared.navTextColor.ensureContrast(against: Brand.shared.navBackground)))
+                .foregroundColor(Color(Brand.shared.navTextColor))
         }
         .frame(width: 44, height: 44).padding(.leading, -6)
         .identifier("Dashboard.profileButton")
@@ -97,14 +142,32 @@ public struct DashboardCardView: View {
     }
 
     @ViewBuilder
-    private var layoutToggleButton: some View {
-        if cards.shouldShowLayoutToggleButton {
-            Button(action: layoutViewModel.toggle) {
-                layoutViewModel.buttonImage
-                    .foregroundColor(Color(Brand.shared.navTextColor.ensureContrast(against: Brand.shared.navBackground)))
-                    .accessibility(label: Text(layoutViewModel.buttonA11yLabel))
+    private var settingsButton: some View {
+        if cards.shouldShowSettingsButton {
+            Button {
+                guard controller.value.presentedViewController == nil else {
+                    controller.value.presentedViewController?.dismiss(animated: true)
+                    return
+                }
+
+                viewModel.settingsButtonTapped.send(())
+            } label: {
+                Image.settingsLine
+                    .foregroundColor(Color(Brand.shared.navTextColor))
             }
             .frame(width: 44, height: 44).padding(.trailing, -6)
+            .accessibilityLabel(Text("Dashboard settings", bundle: .core))
+        }
+    }
+
+    @ViewBuilder func fileUploadNotificationCards() -> some View {
+        ForEach(fileUploadNotificationCardViewModel.items) { viewModel in
+            if !viewModel.isHiddenByUser {
+                FileUploadNotificationCard(viewModel: viewModel)
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, verticalSpacing)
+                    .transition(.move(edge: .top))
+            }
         }
     }
 
@@ -132,8 +195,11 @@ public struct DashboardCardView: View {
     @ViewBuilder func courseCards(_ size: CGSize) -> some View {
         switch cards.state {
         case .loading:
-            ZStack { CircleProgress() }
-                .frame(minWidth: size.width, minHeight: size.height)
+            ZStack {
+                ProgressView()
+                    .progressViewStyle(.indeterminateCircle())
+            }
+            .frame(minWidth: size.width, minHeight: size.height)
         case .data(let cards):
             coursesHeader(width: size.width)
 
@@ -143,7 +209,7 @@ public struct DashboardCardView: View {
                 let card = cards[cardIndex]
                 CourseCard(card: card, hideColorOverlay: hideColorOverlay, showGrade: showGrade, width: layoutInfo.cardWidth, contextColor: card.color)
                     // outside the CourseCard, because that isn't observing colors
-                    .accentColor(Color(card.color.ensureContrast(against: .white)))
+                    .accentColor(Color(card.color))
                     .frame(minHeight: 160)
             }
             .frame(maxWidth: .infinity, alignment: .leading)

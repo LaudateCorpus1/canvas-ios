@@ -26,20 +26,6 @@ class DashboardE2ETests: CoreUITestCase {
         XCTAssertLessThan(CourseInvitation.acceptButton(id: "998").frame().maxY, AccountNotifications.toggleButton(id: "2").frame().minY)
     }
 
-    func testAnnouncementToggle() {
-        let label = "This is a global announcement for students."
-        AccountNotifications.toggleButton(id: "2").waitToExist()
-        XCTAssertFalse(AccountNotifications.dismissButton(id: "2").isVisible)
-        // XCTAssertFalse(app.find(label: label).isVisible) // TODO: Label isn't visible, still isVisible returns true.
-
-        AccountNotifications.toggleButton(id: "2").tap()
-        AccountNotifications.dismissButton(id: "2").waitToExist()
-        app.find(label: label).waitToExist()
-
-        AccountNotifications.toggleButton(id: "2").tap()
-        AccountNotifications.dismissButton(id: "2").waitToVanish()
-    }
-
     func testNavigateToDashboard() throws {
         try XCTSkipIf(true, "passes locally but fails on bitrise")
         Dashboard.courseCard(id: "263").waitToExist()
@@ -70,5 +56,24 @@ class DashboardE2ETests: CoreUITestCase {
 
         // Invite Only should not be listed
         Dashboard.courseCard(id: "338").waitToVanish()
+    }
+
+    func testCourseCardGrades() {
+        Dashboard.dashboardSettings().waitToExist(10).tap()
+        Dashboard.dashboardSettingsShowGradeToggle().waitToExist(10)
+        if !Dashboard.dashboardSettingsShowGradeToggle().isSelected {
+            Dashboard.dashboardSettingsShowGradeToggle().tap()
+        }
+        app.find(label: "Done").tap()
+        pullToRefresh()
+        Dashboard.courseCard(id: "263").waitToExist(5)
+        XCTAssertEqual(Dashboard.courseCard(id: "263").label(), "Assignments assignments 72.73%")
+
+        Dashboard.dashboardSettings().waitToExist(5).tap()
+        Dashboard.dashboardSettingsShowGradeToggle().waitToExist(5).tap()
+        app.find(label: "Done").tap()
+        Dashboard.courseCard(id: "263").waitToExist(5)
+
+        XCTAssertEqual(Dashboard.courseCard(id: "263").label().trimmingCharacters(in: .whitespacesAndNewlines), "Assignments assignments")
     }
 }

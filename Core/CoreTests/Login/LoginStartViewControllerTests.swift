@@ -111,7 +111,7 @@ class LoginStartViewControllerTests: CoreTestCase {
         XCTAssert(router.viewControllerCalls.last?.0 is LoginFindSchoolViewController)
 
         MDMManager.mockHost()
-        controller.findSchoolButton.sendActions(for: .primaryActionTriggered)
+        controller.lastLoginButton.sendActions(for: .primaryActionTriggered)
         XCTAssert(router.viewControllerCalls.last?.0 is LoginWebViewController)
         XCTAssertTrue(controller.authenticationMethodLabel.isHidden)
 
@@ -122,7 +122,7 @@ class LoginStartViewControllerTests: CoreTestCase {
         XCTAssertEqual(controller.authenticationMethodLabel.text, "Site Admin Login")
         controller.authMethodTapped(controller.view)
         XCTAssertEqual(controller.authenticationMethodLabel.text, "Manual OAuth Login")
-        controller.findSchoolButton.sendActions(for: .primaryActionTriggered)
+        controller.lastLoginButton.sendActions(for: .primaryActionTriggered)
         XCTAssert(router.viewControllerCalls.last?.0 is LoginManualOAuthViewController)
 
         controller.authMethodTapped(controller.view)
@@ -132,7 +132,7 @@ class LoginStartViewControllerTests: CoreTestCase {
     func testLinks() {
         MDMManager.mockHost()
         controller.view.layoutIfNeeded()
-        XCTAssertEqual(controller.findSchoolButton.title(for: .normal), "Log In")
+        XCTAssertEqual(controller.lastLoginButton.title(for: .normal), "Log In")
 
         controller.canvasNetworkButton.sendActions(for: .primaryActionTriggered)
         XCTAssertEqual((router.viewControllerCalls.last?.0 as? LoginWebViewController)?.host, "learn.canvas.net")
@@ -213,6 +213,24 @@ class LoginStartViewControllerTests: CoreTestCase {
         XCTAssertTrue(controller.canvasNetworkButton.isHidden)
         XCTAssertFalse(controller.useQRCodeButton.isHidden)
         XCTAssertTrue(controller.useQRCodeDivider.isHidden)
+    }
+
+    func testSavedLoginLayout() {
+        controller.viewDidLoad()
+
+        controller.previousLoginsView.isHidden = true
+        controller.lastLoginAccount = nil
+        XCTAssertTrue(controller.lastLoginButton.isHidden)
+        XCTAssertEqual(controller.loginTopConstraint.constant, 100)
+
+        controller.previousLoginsView.isHidden = false
+        controller.lastLoginAccount = nil
+        XCTAssertTrue(controller.lastLoginButton.isHidden)
+        XCTAssertEqual(controller.loginTopConstraint.constant, 50)
+
+        controller.lastLoginAccount = APIAccountResult(name: "", domain: "", authentication_provider: nil)
+        XCTAssertFalse(controller.lastLoginButton.isHidden)
+        XCTAssertEqual(controller.loginTopConstraint.constant, 50)
     }
 }
 

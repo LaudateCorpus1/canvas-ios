@@ -82,7 +82,7 @@ class AssignmentDetailsPresenterTests: StudentTestCase {
         ContextColor.make(canvasContextID: c.canvasContextID)
 
         presenter.colors.eventHandler()
-        XCTAssertEqual(resultingBackgroundColor, UIColor.red)
+        XCTAssertEqual(resultingBackgroundColor!.hexString, UIColor.red.ensureContrast().hexString)
     }
 
     func testLoadAssignment() {
@@ -491,7 +491,7 @@ class AssignmentDetailsPresenterTests: StudentTestCase {
         Course.make()
         let assignment = Assignment.make()
 
-        let url = URL.temporaryDirectory.appendingPathComponent("assignment-details.txt")
+        let url = URL.Directories.temporary.appendingPathComponent("assignment-details.txt")
         FileManager.default.createFile(atPath: url.path, contents: "test".data(using: .utf8), attributes: nil)
         let file = try UploadManager.shared.add(url: url, batchID: "assignment-\(assignment.id)")
 

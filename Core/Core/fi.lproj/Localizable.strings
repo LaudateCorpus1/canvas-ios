@@ -1,6 +1,3 @@
-/* No comment provided by engineer. */
-"-" = "-";
-
 /* placeholder for the score of an ungraded submission */
 "--" = "--";
 
@@ -43,6 +40,9 @@
 /* No comment provided by engineer. */
 "%@ submitted" = "%@ palautettu";
 
+/* e.g 01.02.2022 to 01.03.2022 */
+"%@ to %@" = "%1$@ - %2$@";
+
 /* label for conversation row with context, subject, & last message date & text */
 "%@, in %@, the last message was on %@ %@" = "%1$@kohdassa %2$@ viimeinen viesti oli %3$@ %4$@";
 
@@ -60,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "%d items" = "%d kohdetta";
+
+/* No comment provided by engineer. */
+"%d Minutes" = "%d Minuuttia";
 
 /* Number of missing submissions */
 "%d missing" = "%d puuttuu";
@@ -90,6 +93,9 @@
 
 /* No comment provided by engineer. */
 "Access" = "Pääsy";
+
+/* No comment provided by engineer. */
+"Access Code:" = "Käyttökoodi:";
 
 /* No comment provided by engineer. */
 "Account Group" = "Tilin ryhmä";
@@ -137,6 +143,9 @@
 "Add message" = "Lisää viesti";
 
 /* No comment provided by engineer. */
+"Add optional comment" = "Lisää valinnainen kommentti";
+
+/* No comment provided by engineer. */
 "Add Planner Note" = "Lisää muistokirjoituksen merkintä";
 
 /* No comment provided by engineer. */
@@ -147,6 +156,12 @@
 
 /* No comment provided by engineer. */
 "Administrative Notifications" = "Pääkäyttäjän ilmoitukset";
+
+/* e.g. After 01.02.2022 */
+"After %@" = "Jälkeen %@";
+
+/* No comment provided by engineer. */
+"After Last Attempt" = "Viimeisen yrityksen jälkeen";
 
 /* No comment provided by engineer. */
 "Alerts" = "Hälytykset";
@@ -180,6 +195,12 @@
 
 /* No comment provided by engineer. */
 "Allow users to comment" = "Salli käyttäjien kommentoida";
+
+/* No comment provided by engineer. */
+"Allowed Attempts:" = "Sallittuja yrityksiä:";
+
+/* No comment provided by engineer. */
+"Always" = "Aina";
 
 /* No comment provided by engineer. */
 "Announcement" = "Ilmoitus";
@@ -260,6 +281,9 @@
 "Assignment Grade Below %d" = "Tehtävän arvosana alla %d";
 
 /* No comment provided by engineer. */
+"Assignment Group:" = "Tehtäväryhmä:";
+
+/* No comment provided by engineer. */
 "Assignment missing" = "Tehtävä puuttuu";
 
 /* No comment provided by engineer. */
@@ -332,6 +356,9 @@
 "Available Until:" = "Saatavissa asti:";
 
 /* No comment provided by engineer. */
+"Average" = "Keskimääräinen";
+
+/* No comment provided by engineer. */
 "Back" = "Takaisin";
 
 /* No comment provided by engineer. */
@@ -374,6 +401,9 @@
 "Cancel" = "Peruuta";
 
 /* No comment provided by engineer. */
+"Cancel Submission?" = "Peruutetaanko lähetys?";
+
+/* No comment provided by engineer. */
 "Canvas Guides" = "Canvas-oppaat";
 
 /* No comment provided by engineer. */
@@ -399,12 +429,6 @@
 
 /* No comment provided by engineer. */
 "Casual question or suggestion" = "Huoleton kysymys tai ehdotus";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to grid" = "Muuta koontinäytön asettelu ristikoksi";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to list" = "Muuta koontinäytön asettelu luetteloksi";
 
 /* No comment provided by engineer. */
 "Change User" = "Vaihda käyttäjää";
@@ -809,6 +833,9 @@
 "Error" = "Virhe";
 
 /* No comment provided by engineer. */
+"Error Details" = "Virheen tiedot";
+
+/* No comment provided by engineer. */
 "Error Saving. Tap to retry." = "Virhe tallennettaessa. Yritä uudelleen napauttamalla.";
 
 /* No comment provided by engineer. */
@@ -851,6 +878,9 @@
 "Failed to save image" = "Kuvan tallennus epäonnistui";
 
 /* No comment provided by engineer. */
+"Failed to start upload." = "Latauksen käynnistys epäonnistui.";
+
+/* No comment provided by engineer. */
 "Failed upload" = "Lataus epäonnistui";
 
 /* No comment provided by engineer. */
@@ -870,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "File" = "Tiedosto";
+
+/* No comment provided by engineer. */
+"File (fileName) size (size)." = "Tiedosto (fileName) koko (koko).";
 
 /* No comment provided by engineer. */
 "File Details" = "Tiedoston tiedot";
@@ -962,6 +995,9 @@
 "Graded" = "Arvosteltu";
 
 /* No comment provided by engineer. */
+"Graded Quiz" = "Arvioitu testi";
+
+/* No comment provided by engineer. */
 "Graded Surveys" = "Arvostellut kyselyt";
 
 /* No comment provided by engineer. */
@@ -995,10 +1031,16 @@
 "Help your students with this assignment by adding instructions." = "Auta opiskelijoitasi tämän tehtävän kanssa lisäämällä ohjeet.";
 
 /* No comment provided by engineer. */
+"Hide" = "Piilota";
+
+/* No comment provided by engineer. */
 "Hide content for %@" = "Piilota sisältö kohteesta  %@";
 
 /* No comment provided by engineer. */
 "High: %@" = "Korkea: %@";
+
+/* No comment provided by engineer. */
+"Highest" = "Korkein";
 
 /* No comment provided by engineer. */
 "Homeroom" = "Homeroom";
@@ -1050,6 +1092,9 @@
 
 /* No comment provided by engineer. */
 "Inbox" = "Saapuneet";
+
+/* No comment provided by engineer. */
+"Incompatible File Type" = "Yhteensopimaton tiedostotyyppi";
 
 /* No comment provided by engineer. */
 "Incomplete" = "Keskeneräinen";
@@ -1133,6 +1178,9 @@
 "Late Grading" = "Myöhäinen arvosanojen anto";
 
 /* No comment provided by engineer. */
+"Latest" = "Viimeisin";
+
+/* No comment provided by engineer. */
 "Launch External Tool" = "Käynnistä ulkoinen työkalu";
 
 /* No comment provided by engineer. */
@@ -1197,6 +1245,9 @@
 
 /* No comment provided by engineer. */
 "Locate QR Code" = "Etsi viivakoodi";
+
+/* No comment provided by engineer. */
+"Lock Questions After Answering:" = "Lukitse kysymykset vastaamisen jälkeen:";
 
 /* No comment provided by engineer. */
 "locked" = "lukittu";
@@ -1358,6 +1409,9 @@
 "Nickname" = "Lempinimi";
 
 /* No comment provided by engineer. */
+"No" = "Ei";
+
+/* No comment provided by engineer. */
 "No Announcements" = "Ei ilmoituksia";
 
 /* No comment provided by engineer. */
@@ -1430,6 +1484,9 @@
 "No supported files to submit" = "Ei lähetettäviä tuettuja tiedostoja";
 
 /* No comment provided by engineer. */
+"No time Limit" = "Ei aikarajaa";
+
+/* No comment provided by engineer. */
 "None" = "Ei mitään";
 
 /* No comment provided by engineer. */
@@ -1488,6 +1545,12 @@
 
 /* No comment provided by engineer. */
 "One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = "Yhtä lähetyksistä ladataan. Jos kirjaudut ulos, tämä saattaa häiriytyä.\nHaluatko varmasti kirjautua ulos?";
+
+/* No comment provided by engineer. */
+"One or more files failed to upload. Check your internet connection and retry to submit." = "Yksi tai useampi tiedosto ei latautunut. Tarkista Internet-yhteytesi ja yritä lähettää uudelleen.";
+
+/* No comment provided by engineer. */
+"One Question at a Time:" = "Yksi kysymys kerrallaan:";
 
 /* No comment provided by engineer. */
 "Only available to students with link" = "Saatavissa opiskelijoille, joilla on linkki";
@@ -1616,10 +1679,19 @@
 "Practice Quizzes" = "Harjoitustestit";
 
 /* No comment provided by engineer. */
+"Practice quizzes & surveys do not have detail views." = "Harjoitteluvisaluissa ja -kyselyissä ei ole yksityiskohtaisia näkymiä.";
+
+/* No comment provided by engineer. */
 "Preferences" = "Asetukset";
 
 /* No comment provided by engineer. */
+"Preparing Files For Upload" = "Valmistellaan tiedostoja ladattavaksi";
+
+/* No comment provided by engineer. */
 "Prerequisite: %@" = "Edellytys: %@";
+
+/* No comment provided by engineer. */
+"Preview Quiz" = "Esikatsele tietovisa";
 
 /* No comment provided by engineer. */
 "Previous Logins" = "Edelliset kirjautumiset";
@@ -1670,6 +1742,9 @@
 "Quiz Details" = "Tietovisan tiedot";
 
 /* No comment provided by engineer. */
+"Quiz Type:" = "Tietovisan yppi:";
+
+/* No comment provided by engineer. */
 "Quizzes" = "Testit";
 
 /* No comment provided by engineer. */
@@ -1716,6 +1791,12 @@
 
 /* No comment provided by engineer. */
 "Remove File" = "Poista tiedosto";
+
+/* No comment provided by engineer. */
+"Remove file from submission." = "Poista tiedosto lähetyksestä.";
+
+/* No comment provided by engineer. */
+"Remove From List?" = "Poistetaanko luettelosta?";
 
 /* No comment provided by engineer. */
 "Removed %1$@" = "Poistettu %1$@";
@@ -1790,6 +1871,9 @@
 "Score at least %@" = "Saa pisteitä vähintään  %@";
 
 /* No comment provided by engineer. */
+"Score to Keep:" = "Pidettävät pistemäärät:";
+
+/* No comment provided by engineer. */
 "Scored above %g" = "Pisteytetty yllä %g";
 
 /* No comment provided by engineer. */
@@ -1835,7 +1919,7 @@
 "Select Course" = "Valitse kurssi";
 
 /* No comment provided by engineer. */
-"Select grading period" = "Valitse arvosanojen antojakso";
+"Select Grading Period" = "Valitse arvosanojen antojakso";
 
 /* No comment provided by engineer. */
 "Select Impact" = "Valitse vaikutus";
@@ -1886,6 +1970,9 @@
 "Show a month at a time" = "Näytä yksi kuukausi kerrallaan";
 
 /* No comment provided by engineer. */
+"Show Correct Answers:" = "Näytä oikeat vastaukset:";
+
+/* No comment provided by engineer. */
 "Show Course Summary" = "Näytä kurssin yhteenveto";
 
 /* No comment provided by engineer. */
@@ -1893,6 +1980,9 @@
 
 /* No comment provided by engineer. */
 "Show more options" = "Näytä lisäasetukset";
+
+/* No comment provided by engineer. */
+"Shuffle Answers:" = "Sekoita vastausvaihtoehdot:";
 
 /* No comment provided by engineer. */
 "Since this is a group discussion, each group has its own conversation for this topic. Here are the discussions you have access to." = "Koska tämä on ryhmäkeskustelu, jokaisella ryhmällä on oma keskustelu tällä aiheelle. Täällä on ne keskustelut, joihin sinulla on käyttöoikeus:";
@@ -1967,13 +2057,28 @@
 "Subject" = "Aihe";
 
 /* No comment provided by engineer. */
+"Submission" = "Tehtäväpalautus";
+
+/* No comment provided by engineer. */
 "Submission %@, %@, %@" = "Tehtäväpalautus %1$@, %2$@, %3$@";
 
 /* No comment provided by engineer. */
 "Submission Comment" = "Lähetyksen kommentti";
 
 /* No comment provided by engineer. */
+"Submission Failed" = "Tehtäväpalautus epäonnistui";
+
+/* No comment provided by engineer. */
+"Submission failed due to unknown error." = "Lähetys epäonnistui tuntemattoman virheen vuoksi.";
+
+/* No comment provided by engineer. */
+"Submission Success!" = "Lähetys onnistui!";
+
+/* No comment provided by engineer. */
 "Submission Types" = "Lähetystyypit";
+
+/* No comment provided by engineer. */
+"Submission Uploaded" = "Tehtäväpalautus ladattu";
 
 /* No comment provided by engineer. */
 "Submissions" = "Lähetykset";
@@ -2019,6 +2124,9 @@
 
 /* No comment provided by engineer. */
 "Take Photo" = "Ota valokuva";
+
+/* No comment provided by engineer. */
+"Tap here for details" = "Lisätietoja napauttamalla tässä.";
 
 /* No comment provided by engineer. */
 "Tap here for help." = "Avaa ohje napauttamalla tässä.";
@@ -2067,6 +2175,9 @@
 
 /* No comment provided by engineer. */
 "The app needs to restart to use the new language settings. Please relaunch the app." = "Sovellus täytyy käynnistää uudelleen, jotta uusia kieliasetuksia voidaan käyttää. Käynnistä sovellus uudelleen.";
+
+/* No comment provided by engineer. */
+"The submission process was terminated by the operating system." = "Käyttöjärjestelmä keskeytti tehtävänpalautuksen.";
 
 /* No comment provided by engineer. */
 "There are no active assignments in this course." = "Tällä kurssilla ei ole aktiivisia tehtäviä.";
@@ -2159,10 +2270,16 @@
 "This page has been disabled for this course." = "Kyseinen sivu on poistettu käytöstä tälle kurssille.";
 
 /* No comment provided by engineer. */
+"This will cancel and delete your upload." = "Tämä peruuttaa ja poistaa latauksesi.";
+
+/* No comment provided by engineer. */
 "This will remove the due date and all of the associated assignees." = "Tämä poistaa määräpäivän ja kaikki liitetyn tehtävänsaajat.";
 
 /* No comment provided by engineer. */
 "Time elapsed" = "Kulunut aika";
+
+/* No comment provided by engineer. */
+"Time Limit:" = "Aikaraja:";
 
 /* No comment provided by engineer. */
 "Title" = "Otsikko";
@@ -2230,11 +2347,23 @@
 /* No comment provided by engineer. */
 "Unsupported Item" = "Tukematon kohde";
 
+/* e.g. Until 01.02.2022 */
+"Until %@" = "Asti %@";
+
 /* No comment provided by engineer. */
 "Updated Language Settings" = "Päivitetyt kieliasetukset";
 
 /* No comment provided by engineer. */
 "Updating" = "Päivitetään";
+
+/* No comment provided by engineer. */
+"Upload completed." = "Lataus valmis.";
+
+/* No comment provided by engineer. */
+"Upload failed due to unknown reason." = "Lataus epäonnistui tuntemattoman virheen vuoksi.";
+
+/* No comment provided by engineer. */
+"Upload failed." = "Lataus epäonnistui.";
 
 /* No comment provided by engineer. */
 "Upload File" = "Lataa tiedosto";
@@ -2243,10 +2372,16 @@
 "Upload in progress" = "Lataus käynnissä.";
 
 /* No comment provided by engineer. */
+"Upload in progress (Int(100 * progress))%" = "Lataus käynnissä (Int(100 * edistyminen))%";
+
+/* No comment provided by engineer. */
 "Uploading %@ is at %@" = "%1$@ lataus on %2$@";
 
 /* Uploading X KB of Y MB */
 "Uploading %@ of %@" = "Ladataan tiedostoa %1$@/%2$@";
+
+/* No comment provided by engineer. */
+"Uploading Submission" = "Ladataan tehtäväpalautusta";
 
 /* No comment provided by engineer. */
 "Uploading..." = "Ladataan...";
@@ -2301,6 +2436,9 @@
 
 /* No comment provided by engineer. */
 "View Previous Announcements" = "Näytä edelliset ilmoitukset";
+
+/* No comment provided by engineer. */
+"View Responses:" = "Näytä vastaukset:";
 
 /* No comment provided by engineer. */
 "Viewed" = "Tarkasteltu";
@@ -2394,6 +2532,9 @@
 
 /* No comment provided by engineer. */
 "Your Email" = "Sähköpostiosoitteesi";
+
+/* No comment provided by engineer. */
+"Your file was successfully submitted.\nEnjoy your day!" = "Tiedostosi lähetys onnistui.\nNauti päivästäsi!";
 
 /* No comment provided by engineer. */
 "Your to do list is empty. Time to recharge." = "Tehtävälistasi on tyhjä. Aika ladata.";

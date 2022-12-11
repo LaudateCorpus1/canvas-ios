@@ -1,6 +1,3 @@
-/* No comment provided by engineer. */
-"-" = "-";
-
 /* placeholder for the score of an ungraded submission */
 "--" = "--";
 
@@ -43,6 +40,9 @@
 /* No comment provided by engineer. */
 "%@ submitted" = "%@ przesłano";
 
+/* e.g 01.02.2022 to 01.03.2022 */
+"%@ to %@" = "%1$@ do %2$@";
+
 /* label for conversation row with context, subject, & last message date & text */
 "%@, in %@, the last message was on %@ %@" = "%1$@, w %2$@, ostatnią wiadomość wysłano w dniu %3$@ %4$@";
 
@@ -60,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "%d items" = "Elementy: %d";
+
+/* No comment provided by engineer. */
+"%d Minutes" = "%d min";
 
 /* Number of missing submissions */
 "%d missing" = "Brak %d";
@@ -90,6 +93,9 @@
 
 /* No comment provided by engineer. */
 "Access" = "Dostęp";
+
+/* No comment provided by engineer. */
+"Access Code:" = "Kod dostępu:";
 
 /* No comment provided by engineer. */
 "Account Group" = "Grupa kont";
@@ -137,6 +143,9 @@
 "Add message" = "Dodaj wiadomość";
 
 /* No comment provided by engineer. */
+"Add optional comment" = "Dodaj opcjonalny komentarz";
+
+/* No comment provided by engineer. */
 "Add Planner Note" = "Dodaj notatkę planera";
 
 /* No comment provided by engineer. */
@@ -147,6 +156,12 @@
 
 /* No comment provided by engineer. */
 "Administrative Notifications" = "Powiadomienia administracyjne";
+
+/* e.g. After 01.02.2022 */
+"After %@" = "Po %@";
+
+/* No comment provided by engineer. */
+"After Last Attempt" = "Po ostatniej próbie";
 
 /* No comment provided by engineer. */
 "Alerts" = "Alerty";
@@ -180,6 +195,12 @@
 
 /* No comment provided by engineer. */
 "Allow users to comment" = "Zezwalaj użytkownikom na komentowanie";
+
+/* No comment provided by engineer. */
+"Allowed Attempts:" = "Dozwolone próby:";
+
+/* No comment provided by engineer. */
+"Always" = "Zawsze";
 
 /* No comment provided by engineer. */
 "Announcement" = "Ogłoszenie";
@@ -260,6 +281,9 @@
 "Assignment Grade Below %d" = "Ocena za zadanie poniżej %d";
 
 /* No comment provided by engineer. */
+"Assignment Group:" = "Grupa zadania:";
+
+/* No comment provided by engineer. */
 "Assignment missing" = "Brak zadania";
 
 /* No comment provided by engineer. */
@@ -332,6 +356,9 @@
 "Available Until:" = "Dostępne do:";
 
 /* No comment provided by engineer. */
+"Average" = "Średni";
+
+/* No comment provided by engineer. */
 "Back" = "Wstecz";
 
 /* No comment provided by engineer. */
@@ -374,6 +401,9 @@
 "Cancel" = "Anuluj";
 
 /* No comment provided by engineer. */
+"Cancel Submission?" = "Anulować przesyłkę?";
+
+/* No comment provided by engineer. */
 "Canvas Guides" = "Przewodniki Canvas";
 
 /* No comment provided by engineer. */
@@ -399,12 +429,6 @@
 
 /* No comment provided by engineer. */
 "Casual question or suggestion" = "Nieformalne pytanie lub sugestia";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to grid" = "Zmień układ panelu nawigacyjnego na siatkę";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to list" = "Zmień układ panelu nawigacyjnego na listę";
 
 /* No comment provided by engineer. */
 "Change User" = "Zmień użytkownika";
@@ -809,6 +833,9 @@
 "Error" = "Błąd";
 
 /* No comment provided by engineer. */
+"Error Details" = "Informacje o błędzie";
+
+/* No comment provided by engineer. */
 "Error Saving. Tap to retry." = "Błąd podczas zapisywania. Stuknij, aby ponowić.";
 
 /* No comment provided by engineer. */
@@ -851,6 +878,9 @@
 "Failed to save image" = "Nie udało się zapisać obrazu";
 
 /* No comment provided by engineer. */
+"Failed to start upload." = "Nie udało się wznowić przesyłania.";
+
+/* No comment provided by engineer. */
 "Failed upload" = "Nie udało się przesłać";
 
 /* No comment provided by engineer. */
@@ -870,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "File" = "Plik";
+
+/* No comment provided by engineer. */
+"File (fileName) size (size)." = "Rozmiar pliku (fileName).";
 
 /* No comment provided by engineer. */
 "File Details" = "Szczegóły pliku";
@@ -962,6 +995,9 @@
 "Graded" = "Oceniono";
 
 /* No comment provided by engineer. */
+"Graded Quiz" = "Oceniony test";
+
+/* No comment provided by engineer. */
 "Graded Surveys" = "Ocenione ankiety";
 
 /* No comment provided by engineer. */
@@ -995,10 +1031,16 @@
 "Help your students with this assignment by adding instructions." = "Pomóż uczestnikom w wykonaniu zadania, dodając instrukcje.";
 
 /* No comment provided by engineer. */
+"Hide" = "Ukryj";
+
+/* No comment provided by engineer. */
 "Hide content for %@" = "Ukryj zawartość dla %@";
 
 /* No comment provided by engineer. */
 "High: %@" = "Wysoki: %@";
+
+/* No comment provided by engineer. */
+"Highest" = "Najwyższe";
 
 /* No comment provided by engineer. */
 "Homeroom" = "Pokój główny";
@@ -1050,6 +1092,9 @@
 
 /* No comment provided by engineer. */
 "Inbox" = "Skrzynka odbiorcza";
+
+/* No comment provided by engineer. */
+"Incompatible File Type" = "Niekompatybilny typ pliku";
 
 /* No comment provided by engineer. */
 "Incomplete" = "Nie ukończono";
@@ -1133,6 +1178,9 @@
 "Late Grading" = "Późne ocenianie";
 
 /* No comment provided by engineer. */
+"Latest" = "Najnowsze";
+
+/* No comment provided by engineer. */
 "Launch External Tool" = "Uruchom narzędzie zewnętrzne";
 
 /* No comment provided by engineer. */
@@ -1197,6 +1245,9 @@
 
 /* No comment provided by engineer. */
 "Locate QR Code" = "Znajdź kod QR";
+
+/* No comment provided by engineer. */
+"Lock Questions After Answering:" = "Zablokuj pytania po udzieleniu odpowiedzi:";
 
 /* No comment provided by engineer. */
 "locked" = "zblokowane";
@@ -1358,6 +1409,9 @@
 "Nickname" = "Przydomek";
 
 /* No comment provided by engineer. */
+"No" = "Nie";
+
+/* No comment provided by engineer. */
 "No Announcements" = "Brak ogłoszeń";
 
 /* No comment provided by engineer. */
@@ -1430,6 +1484,9 @@
 "No supported files to submit" = "Brak obsługiwanych plików do przesłania";
 
 /* No comment provided by engineer. */
+"No time Limit" = "Brak limitu czasu";
+
+/* No comment provided by engineer. */
 "None" = "Brak";
 
 /* No comment provided by engineer. */
@@ -1488,6 +1545,12 @@
 
 /* No comment provided by engineer. */
 "One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = "Jedna z przesyłek jest nadal przesyłana. Wylogowanie mogłoby przerwać ten proces.\nCzy na pewno chcesz się wylogować?";
+
+/* No comment provided by engineer. */
+"One or more files failed to upload. Check your internet connection and retry to submit." = "Nie udało się przesłać co najmniej jednego pliku. Sprawdź połączenie internetowe i ponów przesyłanie.";
+
+/* No comment provided by engineer. */
+"One Question at a Time:" = "Jedno pytanie na raz:";
 
 /* No comment provided by engineer. */
 "Only available to students with link" = "Dostępne tylko dla uczestników z łączem";
@@ -1616,10 +1679,19 @@
 "Practice Quizzes" = "Testy próbne";
 
 /* No comment provided by engineer. */
+"Practice quizzes & surveys do not have detail views." = "Testy próbne i ankiety nie mają widoków szczegółowych.";
+
+/* No comment provided by engineer. */
 "Preferences" = "Preferencje";
 
 /* No comment provided by engineer. */
+"Preparing Files For Upload" = "Przygotowywanie plików do przesłania";
+
+/* No comment provided by engineer. */
 "Prerequisite: %@" = "Wymóg wstępny: %@";
+
+/* No comment provided by engineer. */
+"Preview Quiz" = "Poprzedni test";
 
 /* No comment provided by engineer. */
 "Previous Logins" = "Poprzednie logowania";
@@ -1670,6 +1742,9 @@
 "Quiz Details" = "Informacje szczegółowe dot. testu";
 
 /* No comment provided by engineer. */
+"Quiz Type:" = "Typ testu:";
+
+/* No comment provided by engineer. */
 "Quizzes" = "Testy";
 
 /* No comment provided by engineer. */
@@ -1716,6 +1791,12 @@
 
 /* No comment provided by engineer. */
 "Remove File" = "Usuń plik";
+
+/* No comment provided by engineer. */
+"Remove file from submission." = "Usuń plik z przesyłki.";
+
+/* No comment provided by engineer. */
+"Remove From List?" = "Usunąć z listy?";
 
 /* No comment provided by engineer. */
 "Removed %1$@" = "Usunięto %1$@";
@@ -1790,6 +1871,9 @@
 "Score at least %@" = "Uzyskać co najmniej %@";
 
 /* No comment provided by engineer. */
+"Score to Keep:" = "Wynik docelowy:";
+
+/* No comment provided by engineer. */
 "Scored above %g" = "Oceniony powyżej %g";
 
 /* No comment provided by engineer. */
@@ -1835,7 +1919,7 @@
 "Select Course" = "Wybierz kurs";
 
 /* No comment provided by engineer. */
-"Select grading period" = "Wybierz okres oceniania";
+"Select Grading Period" = "Wybierz okres oceniania";
 
 /* No comment provided by engineer. */
 "Select Impact" = "Wybierz rodzaj wpływu";
@@ -1886,6 +1970,9 @@
 "Show a month at a time" = "Wyświetlaj miesiące po kolei";
 
 /* No comment provided by engineer. */
+"Show Correct Answers:" = "Pokaż poprawne odpowiedzi:";
+
+/* No comment provided by engineer. */
 "Show Course Summary" = "Pokaż Podsumowanie kursu";
 
 /* No comment provided by engineer. */
@@ -1893,6 +1980,9 @@
 
 /* No comment provided by engineer. */
 "Show more options" = "Pokaż więcej opcji";
+
+/* No comment provided by engineer. */
+"Shuffle Answers:" = "Losowa kolejność odpowiedzi:";
 
 /* No comment provided by engineer. */
 "Since this is a group discussion, each group has its own conversation for this topic. Here are the discussions you have access to." = "Ponieważ jest to dyskusja grupowa, każda grupa przeprowadza konwersację na ten temat. Tutaj znajdują się te, do których masz dostęp.";
@@ -1967,13 +2057,28 @@
 "Subject" = "Temat";
 
 /* No comment provided by engineer. */
+"Submission" = "Podanie";
+
+/* No comment provided by engineer. */
 "Submission %@, %@, %@" = "Przesyłanie zadania %1$@, %2$@, %3$@";
 
 /* No comment provided by engineer. */
 "Submission Comment" = "Komentarz do zgłoszenia";
 
 /* No comment provided by engineer. */
+"Submission Failed" = "Przesyłanie zadania nie powiodło się";
+
+/* No comment provided by engineer. */
+"Submission failed due to unknown error." = "Nie udało się przesłać z powodu nieznanego błędu.";
+
+/* No comment provided by engineer. */
+"Submission Success!" = "Przesłano pomyślnie";
+
+/* No comment provided by engineer. */
 "Submission Types" = "Typy przesłanych materiałów";
+
+/* No comment provided by engineer. */
+"Submission Uploaded" = "Przesłano materiały";
 
 /* No comment provided by engineer. */
 "Submissions" = "Przesłane zadania";
@@ -2019,6 +2124,9 @@
 
 /* No comment provided by engineer. */
 "Take Photo" = "Zrób zdjęcie";
+
+/* No comment provided by engineer. */
+"Tap here for details" = "Stuknij tutaj, aby uzyskać szczegóły";
 
 /* No comment provided by engineer. */
 "Tap here for help." = "Stuknij tutaj, aby uzyskać pomoc.";
@@ -2067,6 +2175,9 @@
 
 /* No comment provided by engineer. */
 "The app needs to restart to use the new language settings. Please relaunch the app." = "Aby użyć nowych ustawień językowych, aplikację należy uruchomić ponownie. Uruchom aplikację ponownie.";
+
+/* No comment provided by engineer. */
+"The submission process was terminated by the operating system." = "Przesyłanie zostało przerwane przez system operacyjny.";
 
 /* No comment provided by engineer. */
 "There are no active assignments in this course." = "Obecnie nie ma aktywnych zadań w tym kursie.";
@@ -2159,10 +2270,16 @@
 "This page has been disabled for this course." = "Strona została zablokowana dla tego kursu.";
 
 /* No comment provided by engineer. */
+"This will cancel and delete your upload." = "Spowoduje to anulowanie i usunięcie przesyłki.";
+
+/* No comment provided by engineer. */
 "This will remove the due date and all of the associated assignees." = "Czynność ta spowoduje usunięcie terminu i wszystkich uczestników, którym został przypisany.";
 
 /* No comment provided by engineer. */
 "Time elapsed" = "Czas do tej pory";
+
+/* No comment provided by engineer. */
+"Time Limit:" = "Limit czasu:";
 
 /* No comment provided by engineer. */
 "Title" = "Tytuł";
@@ -2230,11 +2347,23 @@
 /* No comment provided by engineer. */
 "Unsupported Item" = "Nieobsługiwany element";
 
+/* e.g. Until 01.02.2022 */
+"Until %@" = "Do %@";
+
 /* No comment provided by engineer. */
 "Updated Language Settings" = "Zaktualizuj ustawienia językowe";
 
 /* No comment provided by engineer. */
 "Updating" = "Trwa aktualizacja";
+
+/* No comment provided by engineer. */
+"Upload completed." = "Ukończono przesyłanie.";
+
+/* No comment provided by engineer. */
+"Upload failed due to unknown reason." = "Nie udało się przesłać z nieznanego powodu.";
+
+/* No comment provided by engineer. */
+"Upload failed." = "Niepowodzenie przesłania.";
 
 /* No comment provided by engineer. */
 "Upload File" = "Prześlij plik";
@@ -2243,10 +2372,16 @@
 "Upload in progress" = "Przesyłanie w toku...";
 
 /* No comment provided by engineer. */
+"Upload in progress (Int(100 * progress))%" = "Przesyłanie w toku (Int(100 * postęp))%";
+
+/* No comment provided by engineer. */
 "Uploading %@ is at %@" = "Wysyłanie %1$@ ukończono w %2$@";
 
 /* Uploading X KB of Y MB */
 "Uploading %@ of %@" = "Wysyłanie %1$@ z %2$@";
+
+/* No comment provided by engineer. */
+"Uploading Submission" = "Trwa przesyłanie zadania";
 
 /* No comment provided by engineer. */
 "Uploading..." = "Przesyłanie...";
@@ -2301,6 +2436,9 @@
 
 /* No comment provided by engineer. */
 "View Previous Announcements" = "Wyświetl poprzednie ogłoszenia";
+
+/* No comment provided by engineer. */
+"View Responses:" = "Wyświetl odpowiedzi:";
 
 /* No comment provided by engineer. */
 "Viewed" = "Przejrzane";
@@ -2394,6 +2532,9 @@
 
 /* No comment provided by engineer. */
 "Your Email" = "Twój adres e-mail";
+
+/* No comment provided by engineer. */
+"Your file was successfully submitted.\nEnjoy your day!" = "Twój plik został pomyślnie przesłany.\nKorzystaj z dnia!";
 
 /* No comment provided by engineer. */
 "Your to do list is empty. Time to recharge." = "Twoja lista zadań jest pusta. Pora doładować.";

@@ -16,7 +16,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-import Foundation
+import Combine
 import CoreData
 
 extension NSPersistentContainer {
@@ -24,6 +24,7 @@ extension NSPersistentContainer {
 
     public static func create(appGroup: String? = Bundle.main.appGroupID(), session: LoginSession? = nil) -> NSPersistentContainer {
         let model = NSManagedObjectModel(contentsOf: Bundle.core.url(forResource: "Database", withExtension: "momd")!)!
+        FileUploadTargetTransformer.register()
         let container = NSPersistentContainer(name: "Database", managedObjectModel: model)
 
         if let url = databaseURL(for: appGroup, session: session) {
@@ -68,7 +69,7 @@ extension NSPersistentContainer {
     }
 
     public static func databaseURL(for appGroup: String?, session: LoginSession?) -> URL? {
-        let folder = URL.cachesDirectory(appGroup: appGroup)
+        let folder = URL.Directories.caches(appGroup: appGroup)
         var fileName = "Database.sqlite"
         if let host = session?.baseURL.host, let userID = session?.userID {
             fileName = "Database-\(host)-\(userID).sqlite"

@@ -1,6 +1,3 @@
-/* No comment provided by engineer. */
-"-" = "-";
-
 /* placeholder for the score of an ungraded submission */
 "--" = "--";
 
@@ -43,6 +40,9 @@
 /* No comment provided by engineer. */
 "%@ submitted" = "%@ soumèt";
 
+/* e.g 01.02.2022 to 01.03.2022 */
+"%@ to %@" = "%1$@ pou %2$@";
+
 /* label for conversation row with context, subject, & last message date & text */
 "%@, in %@, the last message was on %@ %@" = "%1$@, nan %2$@, dènye mesaj la se te nan dat %3$@ %4$@";
 
@@ -60,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "%d items" = "%d atik";
+
+/* No comment provided by engineer. */
+"%d Minutes" = "%d Minit";
 
 /* Number of missing submissions */
 "%d missing" = "%d manke";
@@ -90,6 +93,9 @@
 
 /* No comment provided by engineer. */
 "Access" = "Aksè";
+
+/* No comment provided by engineer. */
+"Access Code:" = "Kòd Aksè:";
 
 /* No comment provided by engineer. */
 "Account Group" = "Gwoup Kont";
@@ -137,6 +143,9 @@
 "Add message" = "Ajoute mesaj";
 
 /* No comment provided by engineer. */
+"Add optional comment" = "Ajoute kòmantè opsyonèl";
+
+/* No comment provided by engineer. */
 "Add Planner Note" = "Ajoute Mòd Panifikatè";
 
 /* No comment provided by engineer. */
@@ -147,6 +156,12 @@
 
 /* No comment provided by engineer. */
 "Administrative Notifications" = "Notifikasyon Administratif";
+
+/* e.g. After 01.02.2022 */
+"After %@" = "Aprè %@";
+
+/* No comment provided by engineer. */
+"After Last Attempt" = "Aprè Dènye Tantativ";
 
 /* No comment provided by engineer. */
 "Alerts" = "Alèt";
@@ -180,6 +195,12 @@
 
 /* No comment provided by engineer. */
 "Allow users to comment" = "Pèmèt itilizatè yo kòmante";
+
+/* No comment provided by engineer. */
+"Allowed Attempts:" = "Tantativ Otorize:";
+
+/* No comment provided by engineer. */
+"Always" = "Toujou";
 
 /* No comment provided by engineer. */
 "Announcement" = "Anons";
@@ -260,6 +281,9 @@
 "Assignment Grade Below %d" = "Kou Devwa Enferyè %d";
 
 /* No comment provided by engineer. */
+"Assignment Group:" = "Gwoup Sesyon:";
+
+/* No comment provided by engineer. */
 "Assignment missing" = "Sesyon ki manke";
 
 /* No comment provided by engineer. */
@@ -332,6 +356,9 @@
 "Available Until:" = "Disponib Jiska:";
 
 /* No comment provided by engineer. */
+"Average" = "Mwayèn";
+
+/* No comment provided by engineer. */
 "Back" = "Retounen";
 
 /* No comment provided by engineer. */
@@ -374,6 +401,9 @@
 "Cancel" = "Anile";
 
 /* No comment provided by engineer. */
+"Cancel Submission?" = "Anile Soumisyon?";
+
+/* No comment provided by engineer. */
 "Canvas Guides" = "Gid Canvas";
 
 /* No comment provided by engineer. */
@@ -399,12 +429,6 @@
 
 /* No comment provided by engineer. */
 "Casual question or suggestion" = "Kesyon oswa sijesyon pa aza";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to grid" = "Chanje dispozisyon tablo a an griy";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to list" = "Chanje dispozisyon tablo a an lis";
 
 /* No comment provided by engineer. */
 "Change User" = "Chanje Itilizatè";
@@ -809,6 +833,9 @@
 "Error" = "Erè";
 
 /* No comment provided by engineer. */
+"Error Details" = "Detay Erè";
+
+/* No comment provided by engineer. */
 "Error Saving. Tap to retry." = "Erè Anrejistreman. Tape pou re eseye.";
 
 /* No comment provided by engineer. */
@@ -851,6 +878,9 @@
 "Failed to save image" = "Echèk anrejistreman imaj";
 
 /* No comment provided by engineer. */
+"Failed to start upload." = "Echèk demaraj transfè a.";
+
+/* No comment provided by engineer. */
 "Failed upload" = "Chajman echwe";
 
 /* No comment provided by engineer. */
@@ -870,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "File" = "Fichye";
+
+/* No comment provided by engineer. */
+"File (fileName) size (size)." = "Fichye (fileName) gwosè (gwosè).";
 
 /* No comment provided by engineer. */
 "File Details" = "Detay Fichye";
@@ -962,6 +995,9 @@
 "Graded" = "Klase";
 
 /* No comment provided by engineer. */
+"Graded Quiz" = "Quiz Klase";
+
+/* No comment provided by engineer. */
 "Graded Surveys" = "Ankèt Klase";
 
 /* No comment provided by engineer. */
@@ -995,10 +1031,16 @@
 "Help your students with this assignment by adding instructions." = "Ajoute enstriksyon pou ede elèv ou yo ak sesyon sa a.";
 
 /* No comment provided by engineer. */
+"Hide" = "Kache";
+
+/* No comment provided by engineer. */
 "Hide content for %@" = "Kache kontni pou %@";
 
 /* No comment provided by engineer. */
 "High: %@" = "Wo: %@";
+
+/* No comment provided by engineer. */
+"Highest" = "Pi Wo";
 
 /* No comment provided by engineer. */
 "Homeroom" = "Sal kou";
@@ -1050,6 +1092,9 @@
 
 /* No comment provided by engineer. */
 "Inbox" = "Bwat resepsyon";
+
+/* No comment provided by engineer. */
+"Incompatible File Type" = "Tip Fichye Enkonpatib";
 
 /* No comment provided by engineer. */
 "Incomplete" = "Enkonplè";
@@ -1133,6 +1178,9 @@
 "Late Grading" = "Klasman an Reta";
 
 /* No comment provided by engineer. */
+"Latest" = "Dènye";
+
+/* No comment provided by engineer. */
 "Launch External Tool" = "Lanse Zouti Eksteryè";
 
 /* No comment provided by engineer. */
@@ -1197,6 +1245,9 @@
 
 /* No comment provided by engineer. */
 "Locate QR Code" = "Jwenn Kòd QR";
+
+/* No comment provided by engineer. */
+"Lock Questions After Answering:" = "Bloke Kesyon Aprè Repons:";
 
 /* No comment provided by engineer. */
 "locked" = "bloke";
@@ -1358,6 +1409,9 @@
 "Nickname" = "Ti Non Jwèt";
 
 /* No comment provided by engineer. */
+"No" = "Non";
+
+/* No comment provided by engineer. */
 "No Announcements" = "Okenn Anons";
 
 /* No comment provided by engineer. */
@@ -1430,6 +1484,9 @@
 "No supported files to submit" = "Pa gen fichye yo sipòte pou soumèt";
 
 /* No comment provided by engineer. */
+"No time Limit" = "Pa gen Delè";
+
+/* No comment provided by engineer. */
 "None" = "Okenn";
 
 /* No comment provided by engineer. */
@@ -1488,6 +1545,12 @@
 
 /* No comment provided by engineer. */
 "One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = "Gen yonn nan soumisyon w yo ki toujou ap transfere. Si w dekonekte sa ka entewonp pwosesis la.\nOu kwè vrèman ou vle dekonekte?";
+
+/* No comment provided by engineer. */
+"One or more files failed to upload. Check your internet connection and retry to submit." = "Gen yonn oswa plizyè fichye pa rive transfere. Verifye koneksyon entènèt ou a epi eseye re voye yo ankò";
+
+/* No comment provided by engineer. */
+"One Question at a Time:" = "Yon Kesyon apre Lòt:";
 
 /* No comment provided by engineer. */
 "Only available to students with link" = "Disponib sèlman a elèv ak lyen";
@@ -1616,10 +1679,19 @@
 "Practice Quizzes" = "Quiz Pratik";
 
 /* No comment provided by engineer. */
+"Practice quizzes & surveys do not have detail views." = "Quiz ak ankèt pratik yo pa gen afichaj detaye.";
+
+/* No comment provided by engineer. */
 "Preferences" = "Preferans";
 
 /* No comment provided by engineer. */
+"Preparing Files For Upload" = "Preparasyon Fichye pou Transfere";
+
+/* No comment provided by engineer. */
 "Prerequisite: %@" = "Kondisyon Nesesè: %@";
+
+/* No comment provided by engineer. */
+"Preview Quiz" = "Gade yon apèsi Quiz";
 
 /* No comment provided by engineer. */
 "Previous Logins" = "Ansyen Koneksyon";
@@ -1670,6 +1742,9 @@
 "Quiz Details" = "Detay Quiz";
 
 /* No comment provided by engineer. */
+"Quiz Type:" = "Tip Quiz:";
+
+/* No comment provided by engineer. */
 "Quizzes" = "Quiz";
 
 /* No comment provided by engineer. */
@@ -1716,6 +1791,12 @@
 
 /* No comment provided by engineer. */
 "Remove File" = "Elimine Fichye";
+
+/* No comment provided by engineer. */
+"Remove file from submission." = "Elimine fichye nan soumisyon.";
+
+/* No comment provided by engineer. */
+"Remove From List?" = "Elimine nan LIs?";
 
 /* No comment provided by engineer. */
 "Removed %1$@" = "Elimine %1$@";
@@ -1790,6 +1871,9 @@
 "Score at least %@" = "Fè omwen %@";
 
 /* No comment provided by engineer. */
+"Score to Keep:" = "Nòt pou Kenbe:";
+
+/* No comment provided by engineer. */
 "Scored above %g" = "Fè plis pase %g";
 
 /* No comment provided by engineer. */
@@ -1835,7 +1919,7 @@
 "Select Course" = "Seleksyone Kou";
 
 /* No comment provided by engineer. */
-"Select grading period" = "Seleksyone peryòd klasman";
+"Select Grading Period" = "Seleksyone Peryòd Klasman";
 
 /* No comment provided by engineer. */
 "Select Impact" = "Seleksyone Enpak";
@@ -1886,6 +1970,9 @@
 "Show a month at a time" = "Afiche pa mwa";
 
 /* No comment provided by engineer. */
+"Show Correct Answers:" = "Afiche Bon Repons:";
+
+/* No comment provided by engineer. */
 "Show Course Summary" = "Afiche Rezime Kou";
 
 /* No comment provided by engineer. */
@@ -1893,6 +1980,9 @@
 
 /* No comment provided by engineer. */
 "Show more options" = "Afiche plis opsyon";
+
+/* No comment provided by engineer. */
+"Shuffle Answers:" = "Chanje Repons:";
 
 /* No comment provided by engineer. */
 "Since this is a group discussion, each group has its own conversation for this topic. Here are the discussions you have access to." = "Lefèt ke sa a se yon gwoup diskisyon, chak gwoup gen pwòp konvèsasyon pa li pou sijè sa a. Men a ki diskisyon ou gen aksè.";
@@ -1967,13 +2057,28 @@
 "Subject" = "Sijè";
 
 /* No comment provided by engineer. */
+"Submission" = "Soumisyon";
+
+/* No comment provided by engineer. */
 "Submission %@, %@, %@" = "Soumisyon %1$@, %2$@, %3$@";
 
 /* No comment provided by engineer. */
 "Submission Comment" = "Kòmantè Soumisyon";
 
 /* No comment provided by engineer. */
+"Submission Failed" = "Soumisyon Echwe";
+
+/* No comment provided by engineer. */
+"Submission failed due to unknown error." = "Soumisyon an echwe akoz yon erè enkoni.";
+
+/* No comment provided by engineer. */
+"Submission Success!" = "Soumisyon reyisi!";
+
+/* No comment provided by engineer. */
 "Submission Types" = "Tip Soumisyon";
+
+/* No comment provided by engineer. */
+"Submission Uploaded" = "Soumisyon Transfere";
 
 /* No comment provided by engineer. */
 "Submissions" = "Soumisyon";
@@ -2019,6 +2124,9 @@
 
 /* No comment provided by engineer. */
 "Take Photo" = "Fè Foto";
+
+/* No comment provided by engineer. */
+"Tap here for details" = "Tape la pou detay";
 
 /* No comment provided by engineer. */
 "Tap here for help." = "Tape la pou èd.";
@@ -2067,6 +2175,9 @@
 
 /* No comment provided by engineer. */
 "The app needs to restart to use the new language settings. Please relaunch the app." = "Aplikasyon an dwe redemare pou l ka itilize nouvo paramèt lang lan. Re lanse aplikasyon an.";
+
+/* No comment provided by engineer. */
+"The submission process was terminated by the operating system." = "Sistèm eksplwatasyon an te entèwonp pwosesis soumisyon an.";
 
 /* No comment provided by engineer. */
 "There are no active assignments in this course." = "Pa gen devwa aktif nan kou sa a.";
@@ -2159,10 +2270,16 @@
 "This page has been disabled for this course." = "Yo dezaktive paj sa a pou kou sa a.";
 
 /* No comment provided by engineer. */
+"This will cancel and delete your upload." = "Sa ap anile epi elimine transfè ou a.";
+
+/* No comment provided by engineer. */
 "This will remove the due date and all of the associated assignees." = "Sa ap elimine delè a ak tout sesyonè ki asosye yo.";
 
 /* No comment provided by engineer. */
 "Time elapsed" = "Tan ki pase";
+
+/* No comment provided by engineer. */
+"Time Limit:" = "Limit Tan:";
 
 /* No comment provided by engineer. */
 "Title" = "Tit";
@@ -2230,11 +2347,23 @@
 /* No comment provided by engineer. */
 "Unsupported Item" = "Eleman pa Sipòte";
 
+/* e.g. Until 01.02.2022 */
+"Until %@" = "Jiska %@";
+
 /* No comment provided by engineer. */
 "Updated Language Settings" = "Paramèt Langaj Aktyalize";
 
 /* No comment provided by engineer. */
 "Updating" = "Aktyalizasyon";
+
+/* No comment provided by engineer. */
+"Upload completed." = "Transfè konplete.";
+
+/* No comment provided by engineer. */
+"Upload failed due to unknown reason." = "Transfè a echwe pou yon rezon nou pa konnen.";
+
+/* No comment provided by engineer. */
+"Upload failed." = "Transfè echwe.";
 
 /* No comment provided by engineer. */
 "Upload File" = "Transfere Fichye";
@@ -2243,10 +2372,16 @@
 "Upload in progress" = "Transfè an pwosesis";
 
 /* No comment provided by engineer. */
+"Upload in progress (Int(100 * progress))%" = "Transfè ankou (Int(100 * pwogrè))%";
+
+/* No comment provided by engineer. */
 "Uploading %@ is at %@" = "Transfere %1$@ nan %2$@";
 
 /* Uploading X KB of Y MB */
 "Uploading %@ of %@" = "Transfè %1$@ sou %2$@";
+
+/* No comment provided by engineer. */
+"Uploading Submission" = "Chajman Soumisyon";
 
 /* No comment provided by engineer. */
 "Uploading..." = "Chajman...";
@@ -2301,6 +2436,9 @@
 
 /* No comment provided by engineer. */
 "View Previous Announcements" = "Afiche Ansyen Anons";
+
+/* No comment provided by engineer. */
+"View Responses:" = "Afiche Repons:";
 
 /* No comment provided by engineer. */
 "Viewed" = "Afiche";
@@ -2394,6 +2532,9 @@
 
 /* No comment provided by engineer. */
 "Your Email" = "Imèl Ou";
+
+/* No comment provided by engineer. */
+"Your file was successfully submitted.\nEnjoy your day!" = "Fichye ou a transfere avèk siksè.\nPwofite jounen an!";
 
 /* No comment provided by engineer. */
 "Your to do list is empty. Time to recharge." = "Lis tach ou a vid. Lè pou rechaje.";

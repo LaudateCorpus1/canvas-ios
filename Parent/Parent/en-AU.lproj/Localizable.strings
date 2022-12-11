@@ -134,7 +134,7 @@
 "No Due Date" = "No Due Date";
 
 /* No comment provided by engineer. */
-"No Grade" = "No Grade";
+"No Grade" = "No Mark";
 
 /* No comment provided by engineer. */
 "No Students" = "No Students";
@@ -170,9 +170,6 @@
 
 /* No comment provided by engineer. */
 "Settings" = "Settings";
-
-/* No comment provided by engineer. */
-"Settings. %@" = "Settings. %@";
 
 /* No comment provided by engineer. */
 "Summary" = "Summary";

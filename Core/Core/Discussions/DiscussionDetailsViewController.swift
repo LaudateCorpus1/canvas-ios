@@ -37,7 +37,7 @@ public class DiscussionDetailsViewController: UIViewController, ColoredNavViewPr
     public var titleSubtitleView = TitleSubtitleView.create()
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var webViewPlaceholder: UIView!
-    var webView = CoreWebView()
+    var webView = CoreWebView(pullToRefresh: .disabled)
 
     public var color: UIColor?
     var context = Context.currentUser
@@ -261,18 +261,15 @@ public class DiscussionDetailsViewController: UIViewController, ColoredNavViewPr
 
         if env.app == .teacher, let courseID = courseID, let assignmentID = topic.first?.assignmentID {
             if dueSection.isHidden, let assignment = topic.first?.assignment {
-                let controller = CoreHostingController(AssignmentDateSection(assignment: assignment))
+                let controller = CoreHostingController(DateSection(viewModel: AssignmentDateSectionViewModel(assignment: assignment)))
                 controller.view.backgroundColor = nil
                 embed(controller, in: dueSection)
                 dueSection.isHidden = false
             }
 
             if topic.first?.groupTopicChildren == nil, submissionsSection.isHidden {
-                let controller = CoreHostingController(SubmissionBreakdown(
-                    courseID: courseID,
-                    assignmentID: assignmentID,
-                    submissionTypes: [.discussion_topic]
-                ))
+                let viewModel = AssignmentSubmissionBreakdownViewModel(courseID: courseID, assignmentID: assignmentID, submissionTypes: [.discussion_topic])
+                let controller = CoreHostingController(SubmissionBreakdown(viewModel: viewModel))
                 controller.view.backgroundColor = nil
                 embed(controller, in: submissionsSection)
                 submissionsSection.isHidden = false

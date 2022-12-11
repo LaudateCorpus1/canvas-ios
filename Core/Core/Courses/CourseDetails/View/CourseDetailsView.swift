@@ -131,7 +131,8 @@ public struct CourseDetailsView: View {
     @ViewBuilder
     private var loadingView: some View {
         Spacer()
-        CircleProgress()
+        ProgressView()
+            .progressViewStyle(.indeterminateCircle())
         Spacer()
     }
 
@@ -160,6 +161,7 @@ public struct CourseDetailsView: View {
                 }
             }
             .listStyle(.plain)
+            .iOS16HideListScrollContentBackground()
             .iOS15Refreshable { completion in
                 viewModel.refresh(completion: completion)
             }

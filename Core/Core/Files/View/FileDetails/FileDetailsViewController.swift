@@ -180,7 +180,10 @@ public class FileDetailsViewController: UIViewController, CoreWebViewLinkDelegat
     }
 
     func embedWebView(for url: URL, isLocalURL: Bool = true) {
-        let webView = CoreWebView(invertColorsInDarkMode: true)
+        let webView = CoreWebView(
+            pullToRefresh: .disabled,
+            invertColorsInDarkMode: true
+        )
         contentView.addSubview(webView)
         webView.pin(inside: contentView)
         webView.linkDelegate = self
@@ -223,7 +226,7 @@ public class FileDetailsViewController: UIViewController, CoreWebViewLinkDelegat
         guard let url = localURL else { return }
         let pdf = children.first { $0 is PDFViewController } as? PDFViewController
         try? pdf?.document?.save()
-        let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        let controller = CoreActivityViewController(activityItems: [url], applicationActivities: nil)
         controller.popoverPresentationController?.barButtonItem = sender
         env.router.show(controller, from: self, options: .modal())
     }
@@ -261,11 +264,11 @@ extension FileDetailsViewController: URLSessionDownloadDelegate {
 
         if files.first?.mimeClass == "pdf" {
             //  check docs directory first if they have already added/modified annotations on an existing pdf
-            let docsURL = URL.documentsDirectory.appendingPathComponent(filePathComponent)
+            let docsURL = URL.Directories.documents.appendingPathComponent(filePathComponent)
             if FileManager.default.fileExists(atPath: docsURL.path) { return docsURL }
         }
 
-        return URL.temporaryDirectory.appendingPathComponent(filePathComponent)
+        return URL.Directories.temporary.appendingPathComponent(filePathComponent)
     }
 
     func downloadFile(at url: URL) {
@@ -461,7 +464,7 @@ extension FileDetailsViewController: PDFViewControllerDelegate {
 
     public func pdfViewController(_ pdfController: PDFViewController, didSave document: Document, error: Error?) {
         if pdfAnnotationsMutatedMoveToDocsDirectory, let filePathComponent = filePathComponent {
-            let to = URL.documentsDirectory.appendingPathComponent(filePathComponent)
+            let to = URL.Directories.documents.appendingPathComponent(filePathComponent)
             if !FileManager.default.fileExists(atPath: to.path), let from = document.fileURL {
                 do {
                     try FileManager.default.createDirectory(at: to.deletingLastPathComponent(), withIntermediateDirectories: true)
@@ -476,24 +479,35 @@ extension FileDetailsViewController: PDFViewControllerDelegate {
         }
     }
 
-    public func pdfViewController(
-        _ pdfController: PDFViewController,
-        shouldShow menuItems: [MenuItem],
-        atSuggestedTargetRect rect: CGRect,
-        for annotations: [Annotation]?,
-        in annotationRect: CGRect,
-        on pageView: PDFPageView
-    ) -> [MenuItem] {
-        return menuItems.compactMap { item in
-            guard item.identifier != TextMenu.annotationMenuNote.rawValue else { return nil }
-            if item.identifier == TextMenu.annotationMenuInspector.rawValue {
-                item.title = NSLocalizedString("Style", bundle: .core, comment: "")
-            }
-            if item.identifier == TextMenu.annotationMenuRemove.rawValue {
-                return MenuItem(title: item.title, image: .trashLine, block: item.actionBlock, identifier: item.identifier)
-            }
-            return item
+    /** Menu for tapping on an annotation. */
+    public func pdfViewController(_ sender: PDFViewController,
+                                  menuForAnnotations annotations: [Annotation],
+                                  onPageView pageView: PDFPageView,
+                                  appearance: EditMenuAppearance,
+                                  suggestedMenu: UIMenu)
+    -> UIMenu {
+        guard let annotation = annotations.first else {
+            return suggestedMenu.replacingChildren([])
         }
+
+        let menuActions = suggestedMenu.allActions.compactMap {
+            // Rename Inspector menu to Style
+            if $0.identifier == .PSPDFKit.inspector {
+                return UIAction.style(annotation: annotation, pageView: pageView)
+            }
+            // Replace default red Trash icon menu with custom one
+            if $0.identifier == .PSPDFKit.delete, let document = sender.document {
+                return UIAction.deleteAnnotation(document: document, annotation: annotation)
+            }
+            // Remove Note menu
+            if $0.identifier == .PSPDFKit.comments {
+                return nil
+            }
+
+            return $0
+        }
+
+        return suggestedMenu.replacingChildren(menuActions)
     }
 
     public func pdfViewController(_ pdfController: PDFViewController, shouldShow controller: UIViewController, options: [String: Any]? = nil, animated: Bool) -> Bool {

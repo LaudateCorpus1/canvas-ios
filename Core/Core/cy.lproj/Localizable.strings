@@ -1,6 +1,3 @@
-/* No comment provided by engineer. */
-"-" = "-";
-
 /* placeholder for the score of an ungraded submission */
 "--" = "--";
 
@@ -43,6 +40,9 @@
 /* No comment provided by engineer. */
 "%@ submitted" = "%@ wedi cyflwyno";
 
+/* e.g 01.02.2022 to 01.03.2022 */
+"%@ to %@" = "%1$@ i %2$@";
+
 /* label for conversation row with context, subject, & last message date & text */
 "%@, in %@, the last message was on %@ %@" = "%1$@, yn %2$@, roedd y neges ddiwethaf am %3$@ %4$@";
 
@@ -60,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "%d items" = "%d eitem";
+
+/* No comment provided by engineer. */
+"%d Minutes" = "%d Munud";
 
 /* Number of missing submissions */
 "%d missing" = "%d ar goll";
@@ -90,6 +93,9 @@
 
 /* No comment provided by engineer. */
 "Access" = "Mynediad";
+
+/* No comment provided by engineer. */
+"Access Code:" = "Cod Mynediad:";
 
 /* No comment provided by engineer. */
 "Account Group" = "Grŵp Cyfrif";
@@ -137,6 +143,9 @@
 "Add message" = "Ychwanegu neges";
 
 /* No comment provided by engineer. */
+"Add optional comment" = "Ychwanegu sylw dewisol";
+
+/* No comment provided by engineer. */
 "Add Planner Note" = "Ychwanegu Nodyn gan y Trefnydd";
 
 /* No comment provided by engineer. */
@@ -147,6 +156,12 @@
 
 /* No comment provided by engineer. */
 "Administrative Notifications" = "Hysbysiadau Gweinyddol";
+
+/* e.g. After 01.02.2022 */
+"After %@" = "Ar ôl %@";
+
+/* No comment provided by engineer. */
+"After Last Attempt" = "Ar ôl yr Ymgais Ddiwethaf";
 
 /* No comment provided by engineer. */
 "Alerts" = "Negeseuon Hysbysu";
@@ -180,6 +195,12 @@
 
 /* No comment provided by engineer. */
 "Allow users to comment" = "Caniatáu i ddefnyddwyr wneud sylw";
+
+/* No comment provided by engineer. */
+"Allowed Attempts:" = "Ymgeisiau a Ganiateir:";
+
+/* No comment provided by engineer. */
+"Always" = "Bob amser";
 
 /* No comment provided by engineer. */
 "Announcement" = "Cyhoeddiad";
@@ -260,6 +281,9 @@
 "Assignment Grade Below %d" = "Gradd yr Aseiniad yn Is na %d";
 
 /* No comment provided by engineer. */
+"Assignment Group:" = "Grŵp Aseiniadau:";
+
+/* No comment provided by engineer. */
 "Assignment missing" = "Aseiniad ar goll";
 
 /* No comment provided by engineer. */
@@ -332,6 +356,9 @@
 "Available Until:" = "Ar gael Tan:";
 
 /* No comment provided by engineer. */
+"Average" = "Cyfartaledd";
+
+/* No comment provided by engineer. */
 "Back" = "Yn ôl";
 
 /* No comment provided by engineer. */
@@ -374,6 +401,9 @@
 "Cancel" = "Canslo";
 
 /* No comment provided by engineer. */
+"Cancel Submission?" = "Canslo Cyflwyniad?";
+
+/* No comment provided by engineer. */
 "Canvas Guides" = "Canllawiau Canvas";
 
 /* No comment provided by engineer. */
@@ -399,12 +429,6 @@
 
 /* No comment provided by engineer. */
 "Casual question or suggestion" = "Awgrym neu gwestiwn anffurfiol";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to grid" = "Newid cynllun y dangosfwrdd i grid";
-
-/* No comment provided by engineer. */
-"Change dashboard layout to list" = "Newid cynllun y dangosfwrdd i restr";
 
 /* No comment provided by engineer. */
 "Change User" = "Newid Defnyddiwr";
@@ -809,6 +833,9 @@
 "Error" = "Gwall";
 
 /* No comment provided by engineer. */
+"Error Details" = "Manylion y Gwall";
+
+/* No comment provided by engineer. */
 "Error Saving. Tap to retry." = "Gwall wrth gadw. Tapiwch i roi cynnig arall arni.";
 
 /* No comment provided by engineer. */
@@ -851,6 +878,9 @@
 "Failed to save image" = "Wedi methu cadw delwedd";
 
 /* No comment provided by engineer. */
+"Failed to start upload." = "Wedi methu dechrau llwytho i fyny.";
+
+/* No comment provided by engineer. */
 "Failed upload" = "Wedi methu llwytho i fyny";
 
 /* No comment provided by engineer. */
@@ -870,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "File" = "Ffeil";
+
+/* No comment provided by engineer. */
+"File (fileName) size (size)." = "Maint ffeil (fileName) (maint).";
 
 /* No comment provided by engineer. */
 "File Details" = "Manylion y Ffeil";
@@ -962,6 +995,9 @@
 "Graded" = "Wedi graddio";
 
 /* No comment provided by engineer. */
+"Graded Quiz" = "Cwis wedi’i Raddio";
+
+/* No comment provided by engineer. */
 "Graded Surveys" = "Arolygon wedi’u Graddio";
 
 /* No comment provided by engineer. */
@@ -995,10 +1031,16 @@
 "Help your students with this assignment by adding instructions." = "Helpwch eich myfyrwyr gyda’r aseiniad hwn trwy ychwanegu cyfarwyddiadau.";
 
 /* No comment provided by engineer. */
+"Hide" = "Cuddio";
+
+/* No comment provided by engineer. */
 "Hide content for %@" = "Cuddio cynnwys ar gyfer %@";
 
 /* No comment provided by engineer. */
 "High: %@" = "Uchel: %@";
+
+/* No comment provided by engineer. */
+"Highest" = "Uchaf";
 
 /* No comment provided by engineer. */
 "Homeroom" = "Ystafell hafan";
@@ -1050,6 +1092,9 @@
 
 /* No comment provided by engineer. */
 "Inbox" = "Blwch Derbyn";
+
+/* No comment provided by engineer. */
+"Incompatible File Type" = "Math o Ffeil Anghydnaws";
 
 /* No comment provided by engineer. */
 "Incomplete" = "Heb Gwblhau";
@@ -1133,6 +1178,9 @@
 "Late Grading" = "Graddio Hwyr";
 
 /* No comment provided by engineer. */
+"Latest" = "Diweddaraf";
+
+/* No comment provided by engineer. */
 "Launch External Tool" = "Lansio Adnodd Allanol";
 
 /* No comment provided by engineer. */
@@ -1197,6 +1245,9 @@
 
 /* No comment provided by engineer. */
 "Locate QR Code" = "Dod o hyd i God QR";
+
+/* No comment provided by engineer. */
+"Lock Questions After Answering:" = "Cloi atebion ar ôl ateb:";
 
 /* No comment provided by engineer. */
 "locked" = "wedi'u cloi";
@@ -1358,6 +1409,9 @@
 "Nickname" = "Llysenw";
 
 /* No comment provided by engineer. */
+"No" = "Na";
+
+/* No comment provided by engineer. */
 "No Announcements" = "Dim Cyhoeddiadau";
 
 /* No comment provided by engineer. */
@@ -1430,6 +1484,9 @@
 "No supported files to submit" = "Dim ffeiliau y mae modd delio â nhw i’w cyflwyno";
 
 /* No comment provided by engineer. */
+"No time Limit" = "Dim Terfyn Amser";
+
+/* No comment provided by engineer. */
 "None" = "Dim";
 
 /* No comment provided by engineer. */
@@ -1488,6 +1545,12 @@
 
 /* No comment provided by engineer. */
 "One of your submissions is still being uploaded. Logging out might interrupt it.\nAre you sure you want to log out?" = "Mae un o’ch cyflwyniadau yn dal i gael ei lwytho i fyny. Gallai allgofnodi darfu ar hyn.\nYdych chi’n siŵr eich bod am allgofnodi?";
+
+/* No comment provided by engineer. */
+"One or more files failed to upload. Check your internet connection and retry to submit." = "Wedi methu llwytho un neu ragor o ffeiliau i fyny. Gwiriwch eich cysylltiad rhyngrwyd a rhoi cynnig arall ar gyflwyno.";
+
+/* No comment provided by engineer. */
+"One Question at a Time:" = "Un Cwestiwn ar y Tro:";
 
 /* No comment provided by engineer. */
 "Only available to students with link" = "Dim ond ar gael i fyfyrwyr sydd â dolen";
@@ -1616,10 +1679,19 @@
 "Practice Quizzes" = "Cwisiau Ymarfer";
 
 /* No comment provided by engineer. */
+"Practice quizzes & surveys do not have detail views." = "Nid oes gan gwisiau ac arolygon weddau manwl.";
+
+/* No comment provided by engineer. */
 "Preferences" = "Blaenoriaethau";
 
 /* No comment provided by engineer. */
+"Preparing Files For Upload" = "Paratoi Ffeiliau i’w Llwytho i Fyny";
+
+/* No comment provided by engineer. */
 "Prerequisite: %@" = "Rhagofyniad: %@";
+
+/* No comment provided by engineer. */
+"Preview Quiz" = "Rhagolwg o'r Cwis";
 
 /* No comment provided by engineer. */
 "Previous Logins" = "Manylion Mewngofnodi Blaenorol";
@@ -1670,6 +1742,9 @@
 "Quiz Details" = "Manylion Cwis";
 
 /* No comment provided by engineer. */
+"Quiz Type:" = "Math o Gwis:";
+
+/* No comment provided by engineer. */
 "Quizzes" = "Cwisiau";
 
 /* No comment provided by engineer. */
@@ -1716,6 +1791,12 @@
 
 /* No comment provided by engineer. */
 "Remove File" = "Tynnu Ffeil";
+
+/* No comment provided by engineer. */
+"Remove file from submission." = "Tynnwch y ffeil o’r cyflwyniad.";
+
+/* No comment provided by engineer. */
+"Remove From List?" = "Tynnu o'r Rhestr?";
 
 /* No comment provided by engineer. */
 "Removed %1$@" = "Wedi tynnu %1$@";
@@ -1790,6 +1871,9 @@
 "Score at least %@" = "Sgorio o leiaf %@";
 
 /* No comment provided by engineer. */
+"Score to Keep:" = "Sgôr i’w chadw:";
+
+/* No comment provided by engineer. */
 "Scored above %g" = "Wedi sgorio dros %g";
 
 /* No comment provided by engineer. */
@@ -1835,7 +1919,7 @@
 "Select Course" = "Dewis Cwrs";
 
 /* No comment provided by engineer. */
-"Select grading period" = "Dewis cyfnod graddio";
+"Select Grading Period" = "Dewis Cyfnod Graddio";
 
 /* No comment provided by engineer. */
 "Select Impact" = "Dewiswch Effaith";
@@ -1886,6 +1970,9 @@
 "Show a month at a time" = "Dangos un mis ar y tro";
 
 /* No comment provided by engineer. */
+"Show Correct Answers:" = "Dangos Atebion Cywir:";
+
+/* No comment provided by engineer. */
 "Show Course Summary" = "Dangos Crynodeb Cwrs";
 
 /* No comment provided by engineer. */
@@ -1893,6 +1980,9 @@
 
 /* No comment provided by engineer. */
 "Show more options" = "Dangos mwy o ddewisiadau";
+
+/* No comment provided by engineer. */
+"Shuffle Answers:" = "Cymysgu Atebion:";
 
 /* No comment provided by engineer. */
 "Since this is a group discussion, each group has its own conversation for this topic. Here are the discussions you have access to." = "Gan fod hon yn drafodaeth grŵp, mae gan bob grŵp ei sgwrs ei hun ar gyfer y pwnc hwn. Dyma’r trafodaethau mae gennych chi fynediad atyn nhw.";
@@ -1967,13 +2057,28 @@
 "Subject" = "Pwnc";
 
 /* No comment provided by engineer. */
+"Submission" = "Cyflwyniad";
+
+/* No comment provided by engineer. */
 "Submission %@, %@, %@" = "Cyflwyniad %1$@, %2$@, %3$@";
 
 /* No comment provided by engineer. */
 "Submission Comment" = "Sylw ar y cyflwyniad";
 
 /* No comment provided by engineer. */
+"Submission Failed" = "Cyflwyniad wedi methu";
+
+/* No comment provided by engineer. */
+"Submission failed due to unknown error." = "Cyflwyniad wedi methu oherwydd gwall anhysbys.";
+
+/* No comment provided by engineer. */
+"Submission Success!" = "Wedi Llwyddo i Gyflwyno!";
+
+/* No comment provided by engineer. */
 "Submission Types" = "Mathau o Gyflwyniadau";
+
+/* No comment provided by engineer. */
+"Submission Uploaded" = "Cyflwyniad Wedi’i Lwytho i Fyny";
 
 /* No comment provided by engineer. */
 "Submissions" = "Cyflwyniadau";
@@ -2019,6 +2124,9 @@
 
 /* No comment provided by engineer. */
 "Take Photo" = "Tynnu llun gyda chamera";
+
+/* No comment provided by engineer. */
+"Tap here for details" = "Tapiwch yma i gael manylion.";
 
 /* No comment provided by engineer. */
 "Tap here for help." = "Tapiwch yma i gael help.";
@@ -2067,6 +2175,9 @@
 
 /* No comment provided by engineer. */
 "The app needs to restart to use the new language settings. Please relaunch the app." = "Er mwyn defnyddio’r gosodiadau iaith newydd mae angen ailddechrau’r ap. Ail-lansiwch yr ap.";
+
+/* No comment provided by engineer. */
+"The submission process was terminated by the operating system." = "Cafodd y broses gyflwyno ei therfynu gan y system weithredu.";
 
 /* No comment provided by engineer. */
 "There are no active assignments in this course." = "Does dim aseiniadau gweithredol yn y cwrs hwn.";
@@ -2159,10 +2270,16 @@
 "This page has been disabled for this course." = "Mae’r dudalen hon wedi’i hanalluogi ar gyfer y cwrs hwn";
 
 /* No comment provided by engineer. */
+"This will cancel and delete your upload." = "Bydd hyn yn canslo ac yn dileu eich ffeil sy’n cael ei llwytho i fyny.";
+
+/* No comment provided by engineer. */
 "This will remove the due date and all of the associated assignees." = "Bydd hyn yn tynnu'r dyddiad erbyn a phob aseinî cysylltiedig.";
 
 /* No comment provided by engineer. */
 "Time elapsed" = "Amser wedi mynd heibio";
+
+/* No comment provided by engineer. */
+"Time Limit:" = "Terfyn Amser:";
 
 /* No comment provided by engineer. */
 "Title" = "Teitl";
@@ -2230,11 +2347,23 @@
 /* No comment provided by engineer. */
 "Unsupported Item" = "Eitem Anghydnaws";
 
+/* e.g. Until 01.02.2022 */
+"Until %@" = "Tan %@";
+
 /* No comment provided by engineer. */
 "Updated Language Settings" = "Gosodiadau Iaith wedi’u Diweddaru";
 
 /* No comment provided by engineer. */
 "Updating" = "Diweddaru";
+
+/* No comment provided by engineer. */
+"Upload completed." = "Proses llwytho i fyny wedi'i chwblhau.";
+
+/* No comment provided by engineer. */
+"Upload failed due to unknown reason." = "Wedi methu llwytho i fyny oherwydd rheswm anhysbys.";
+
+/* No comment provided by engineer. */
+"Upload failed." = "Wedi methu llwytho i fyny.";
 
 /* No comment provided by engineer. */
 "Upload File" = "Llwytho Ffeil i Fyny";
@@ -2243,10 +2372,16 @@
 "Upload in progress" = "Proses lwytho i fyny ar waith";
 
 /* No comment provided by engineer. */
+"Upload in progress (Int(100 * progress))%" = "Proses lwytho i fyny ar waith (Int(100 * ar waith))%";
+
+/* No comment provided by engineer. */
 "Uploading %@ is at %@" = "Mae llwytho %1$@ i fyny ar %2$@";
 
 /* Uploading X KB of Y MB */
 "Uploading %@ of %@" = "Wrthi'n llwytho i fyny %1$@ o %2$@";
+
+/* No comment provided by engineer. */
+"Uploading Submission" = "Llwytho cyflwyniad i fyny";
 
 /* No comment provided by engineer. */
 "Uploading..." = "Wrthi’n llwytho i fyny...";
@@ -2301,6 +2436,9 @@
 
 /* No comment provided by engineer. */
 "View Previous Announcements" = "Gweld Cyhoeddiadau Blaenorol";
+
+/* No comment provided by engineer. */
+"View Responses:" = "Gweld Ymatebion:";
 
 /* No comment provided by engineer. */
 "Viewed" = "Wedi gweld";
@@ -2394,6 +2532,9 @@
 
 /* No comment provided by engineer. */
 "Your Email" = "Eich E-bost";
+
+/* No comment provided by engineer. */
+"Your file was successfully submitted.\nEnjoy your day!" = "Wedi llwyddo i gyflwyno eich ffeil.\nMwynhewch eich diwrnod!";
 
 /* No comment provided by engineer. */
 "Your to do list is empty. Time to recharge." = "Mae eich rhestr tasgau i’w gwneud yn wag. Amser i ailwefru.";

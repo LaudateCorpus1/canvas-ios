@@ -28,7 +28,7 @@ class DashboardCardsViewModel: ObservableObject {
     }
 
     @Published public private(set) var state = ViewModelState<[DashboardCard]>.loading
-    @Published public private(set) var shouldShowLayoutToggleButton = false
+    @Published public private(set) var shouldShowSettingsButton = false
     private let env = AppEnvironment.shared
     private lazy var cards: Store<GetDashboardCards> = env.subscribe(GetDashboardCards()) { [weak self] in
         self?.update()
@@ -54,7 +54,6 @@ class DashboardCardsViewModel: ObservableObject {
         courses.exhaust(force: true)
         cards.refresh(force: true) { [weak self] _ in
             onComplete?()
-
             guard let self = self else { return }
             if self.needsRefresh { self.refresh() }
         }
@@ -73,7 +72,7 @@ class DashboardCardsViewModel: ObservableObject {
     }
 
     private func update() {
-        guard cards.requested, !cards.pending, !courseSectionStatus.isUpdatePending, courses.requested, !courses.pending else { return }
+        guard cards.requested, !cards.pending, !courseSectionStatus.isUpdatePending, courses.requested, !courses.pending, !courses.hasNextPage else { return }
 
         guard cards.state != .error else {
             state = .error(NSLocalizedString("Something went wrong", comment: ""))
@@ -82,7 +81,7 @@ class DashboardCardsViewModel: ObservableObject {
 
         let cards = filteredCards()
         state = cards.isEmpty ? .empty : .data(cards)
-        shouldShowLayoutToggleButton = !cards.isEmpty
+        shouldShowSettingsButton = !cards.isEmpty
     }
 
     private func filteredCards() -> [DashboardCard] {

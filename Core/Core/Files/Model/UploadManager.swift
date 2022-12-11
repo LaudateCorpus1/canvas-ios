@@ -90,6 +90,25 @@ open class UploadManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, 
         }
     }
 
+    public func retry(batchID: String) {
+        context.performAndWait {
+            let files: [File] = context.fetch(filesPredicate(batchID: batchID))
+            let nonCompletedFiles = files.filter { $0.id == nil }
+
+            if nonCompletedFiles.isEmpty {
+                // File upload was successful but submission failed, only submission should be retried.
+                if let file = files.first, case let .submission(courseID, assignmentID, comment)? = file.context {
+                    submit(file: file, courseID: courseID, assignmentID: assignmentID, comment: comment)
+                }
+            } else {
+                for file in nonCompletedFiles {
+                    guard let uploadContext = file.context else { continue }
+                    upload(file: file, to: uploadContext)
+                }
+            }
+        }
+    }
+
     open func upload(batch batchID: String, to uploadContext: FileUploadContext, callback: (() -> Void)? = nil) {
         context.performAndWait {
             let files: [File] = context.fetch(filesPredicate(batchID: batchID))
@@ -287,7 +306,7 @@ open class UploadManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, 
         // This is to make the background task wait until we receive the submission response from the API.
         let semaphore = DispatchSemaphore(value: 0)
         let objectID = file.objectID
-        process.performExpiringActivity(withReason: "submit assignment") { expired in
+        process.performExpiringActivity(reason: "submit assignment") { expired in
             if expired {
                 task?.cancel()
             }
